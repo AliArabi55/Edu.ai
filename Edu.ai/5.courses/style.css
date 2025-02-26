@@ -1,0 +1,718 @@
+.negative-answer {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.negative-answer .div {
+  background-color: var(--neutralwhite);
+  overflow: hidden;
+  width: 1440px;
+  height: 1260px;
+  position: relative;
+}
+
+.negative-answer .overlap {
+  position: absolute;
+  width: 1439px;
+  height: 111px;
+  top: 0;
+  left: 0;
+  background-color: var(--neutralwhite);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--neutralgray-bdbdbd);
+}
+
+.negative-answer .group {
+  position: relative;
+  width: 858px;
+  height: 48px;
+  top: 30px;
+  left: 176px;
+}
+
+.negative-answer .text-wrapper {
+  position: absolute;
+  width: 52px;
+  top: 24px;
+  left: 448px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-2 {
+  position: absolute;
+  width: 52px;
+  top: 22px;
+  left: 314px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-3 {
+  position: absolute;
+  width: 232px;
+  top: 0;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.negative-answer .text-wrapper-4 {
+  position: absolute;
+  width: 82px;
+  top: 24px;
+  left: 592px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.negative-answer .text-wrapper-5 {
+  position: absolute;
+  width: 82px;
+  top: 24px;
+  left: 766px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.negative-answer .overlap-group {
+  position: absolute;
+  width: 1447px;
+  height: 1269px;
+  top: 111px;
+  left: 0;
+}
+
+.negative-answer .text-wrapper-6 {
+  position: absolute;
+  width: 261px;
+  top: 42px;
+  left: 604px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .overlap-group-wrapper {
+  position: absolute;
+  width: 1442px;
+  height: 392px;
+  top: 877px;
+  left: 0;
+}
+
+.negative-answer .overlap-group-2 {
+  position: relative;
+  width: 1440px;
+  height: 392px;
+  background-color: #0039b4;
+}
+
+.negative-answer .group-2 {
+  position: absolute;
+  width: 160px;
+  height: 166px;
+  top: 71px;
+  left: 840px;
+}
+
+.negative-answer .text-wrapper-7 {
+  position: absolute;
+  width: 150px;
+  top: 49px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-8 {
+  position: absolute;
+  width: 123px;
+  top: 79px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-9 {
+  position: absolute;
+  width: 55px;
+  top: 110px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-10 {
+  position: absolute;
+  width: 93px;
+  top: 140px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-11 {
+  position: absolute;
+  width: 76px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.negative-answer .group-3 {
+  position: absolute;
+  width: 93px;
+  height: 166px;
+  top: 71px;
+  left: 685px;
+}
+
+.negative-answer .text-wrapper-12 {
+  position: absolute;
+  width: 67px;
+  top: 49px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-13 {
+  position: absolute;
+  width: 51px;
+  top: 79px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-14 {
+  position: absolute;
+  width: 83px;
+  top: 110px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-15 {
+  position: absolute;
+  width: 62px;
+  top: 140px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-16 {
+  position: absolute;
+  width: 80px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.negative-answer .group-4 {
+  position: absolute;
+  width: 238px;
+  height: 159px;
+  top: 71px;
+  left: 1062px;
+}
+
+.negative-answer .p {
+  position: absolute;
+  width: 233px;
+  top: 49px;
+  left: 1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.negative-answer .text-wrapper-17 {
+  position: absolute;
+  width: 122px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.negative-answer .typcn-social-twitter-wrapper {
+  position: absolute;
+  width: 32px;
+  height: 35px;
+  top: 124px;
+  left: 45px;
+  background-color: #d9d9d9;
+  border-radius: 16px / 17.42px;
+}
+
+.negative-answer .img {
+  position: absolute;
+  width: 24px;
+  height: 26px;
+  top: 4px;
+  left: 4px;
+}
+
+.negative-answer .typcn-social-wrapper {
+  position: absolute;
+  width: 32px;
+  height: 35px;
+  top: 124px;
+  left: 0;
+  background-color: #d9d9d9;
+  border-radius: 16px / 17.42px;
+}
+
+.negative-answer .ion-social-youtube-wrapper {
+  position: absolute;
+  width: 32px;
+  height: 35px;
+  top: 124px;
+  left: 135px;
+  background-color: #d9d9d9;
+  border-radius: 16px / 17.42px;
+}
+
+.negative-answer .ion-social-youtube {
+  position: absolute;
+  width: 18px;
+  height: 20px;
+  top: 8px;
+  left: 7px;
+}
+
+.negative-answer .img-wrapper {
+  position: absolute;
+  width: 32px;
+  height: 35px;
+  top: 124px;
+  left: 90px;
+  background-color: #d9d9d9;
+  border-radius: 16px / 17.42px;
+}
+
+.negative-answer .text-wrapper-18 {
+  position: absolute;
+  width: 232px;
+  top: 61px;
+  left: 133px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-19 {
+  position: absolute;
+  width: 224px;
+  top: 1002px;
+  left: 131px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.negative-answer .group-5 {
+  position: absolute;
+  width: 1440px;
+  height: 1187px;
+  top: 0;
+  left: 7px;
+}
+
+.negative-answer .group-6 {
+  position: absolute;
+  width: 123px;
+  height: 26px;
+  top: 1131px;
+  left: 658px;
+}
+
+.negative-answer .group-wrapper {
+  position: absolute;
+  width: 96px;
+  height: 26px;
+  top: 0;
+  left: 0;
+}
+
+.negative-answer .div-wrapper {
+  position: relative;
+  width: 98px;
+  height: 26px;
+}
+
+.negative-answer .text-wrapper-20 {
+  position: absolute;
+  height: 26px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #5027b5;
+  font-size: 17px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.negative-answer .chevron-down {
+  position: absolute;
+  width: 24px;
+  height: 17px;
+  top: 1px;
+  left: 99px;
+}
+
+.negative-answer .group-7 {
+  position: absolute;
+  width: 790px;
+  height: 735px;
+  top: 30px;
+  left: 136px;
+}
+
+.negative-answer .group-8 {
+  position: absolute;
+  width: 277px;
+  height: 131px;
+  top: 0;
+  left: 0;
+}
+
+.negative-answer .text-wrapper-21 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 44px;
+  text-align: center;
+  letter-spacing: -0.09px;
+  line-height: 62px;
+  white-space: nowrap;
+}
+
+.negative-answer .group-9 {
+  position: absolute;
+  width: 103px;
+  height: 39px;
+  top: 92px;
+  left: 0;
+}
+
+.negative-answer .group-10 {
+  position: relative;
+  width: 105px;
+  height: 39px;
+}
+
+.negative-answer .text-wrapper-22 {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  -webkit-text-stroke: 1px #0039b4;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #0039b4;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.negative-answer .line {
+  position: absolute;
+  width: 103px;
+  height: 2px;
+  top: 37px;
+  left: 0;
+}
+
+.negative-answer .group-11 {
+  position: absolute;
+  width: 790px;
+  height: 557px;
+  top: 178px;
+  left: 0;
+}
+
+.negative-answer .group-12 {
+  position: relative;
+  height: 557px;
+}
+
+.negative-answer .group-13 {
+  position: absolute;
+  width: 369px;
+  height: 553px;
+  top: 4px;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 9px #99999740;
+}
+
+.negative-answer .rectangle {
+  position: absolute;
+  width: 369px;
+  height: 272px;
+  top: 0;
+  left: 0;
+}
+
+.negative-answer .group-14 {
+  position: absolute;
+  width: 306px;
+  height: 121px;
+  top: 296px;
+  left: 24px;
+}
+
+.negative-answer .group-15 {
+  position: absolute;
+  width: 208px;
+  height: 43px;
+  top: 0;
+  left: 0;
+}
+
+.negative-answer .overlap-group-3 {
+  width: 206px;
+  position: relative;
+  height: 43px;
+  background-color: #eaeaea;
+  border-radius: 7px;
+}
+
+.negative-answer .text-wrapper-23 {
+  position: absolute;
+  width: 164px;
+  height: 24px;
+  top: 9px;
+  left: 21px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #666768;
+  font-size: 12px;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-24 {
+  position: absolute;
+  width: 304px;
+  height: 61px;
+  top: 60px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.negative-answer .group-16 {
+  position: absolute;
+  width: 369px;
+  height: 553px;
+  top: 0;
+  left: 421px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 0px 9px #99999740;
+}
+
+.negative-answer .rectangle-2 {
+  object-fit: cover;
+  position: absolute;
+  width: 369px;
+  height: 272px;
+  top: 0;
+  left: 0;
+}
+
+.negative-answer .group-17 {
+  position: absolute;
+  width: 306px;
+  height: 107px;
+  top: 296px;
+  left: 24px;
+}
+
+.negative-answer .group-18 {
+  position: absolute;
+  width: 194px;
+  height: 43px;
+  top: 0;
+  left: 0;
+}
+
+.negative-answer .overlap-group-4 {
+  width: 192px;
+  position: relative;
+  height: 43px;
+  background-color: #eaeaea;
+  border-radius: 7px;
+}
+
+.negative-answer .text-wrapper-25 {
+  position: absolute;
+  width: 149px;
+  height: 24px;
+  top: 9px;
+  left: 21px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #666768;
+  font-size: 12px;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.negative-answer .text-wrapper-26 {
+  position: absolute;
+  width: 304px;
+  height: 31px;
+  top: 76px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 15px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.negative-answer .frame {
+  width: 169px;
+  left: 229px;
+  background-color: #febc18;
+  display: flex;
+  height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 23px 44px;
+  position: absolute;
+  top: 669px;
+  border-radius: 62px;
+}
+
+.negative-answer .text-wrapper-27 {
+  position: relative;
+  width: fit-content;
+  margin-top: -9.50px;
+  margin-bottom: -7.50px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.negative-answer .frame-2 {
+  width: 174px;
+  left: 668px;
+  background-color: #bebebe;
+  display: flex;
+  height: 47px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 23px 44px;
+  position: absolute;
+  top: 669px;
+  border-radius: 62px;
+}

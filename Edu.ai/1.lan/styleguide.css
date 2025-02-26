@@ -1,0 +1,9 @@
+:root {
+  --neutralwhite: rgba(255, 255, 255, 1);
+  --web-body-normal-font-family: "Poppins", Helvetica;
+  --web-body-normal-font-weight: 400;
+  --web-body-normal-font-size: 16px;
+  --web-body-normal-letter-spacing: 0px;
+  --web-body-normal-line-height: normal;
+  --web-body-normal-font-style: normal;
+}

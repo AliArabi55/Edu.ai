@@ -1,0 +1,27 @@
+:root {
+  --neutralwhite: rgba(255, 255, 255, 1);
+  --neutralgray-e0e0e0: rgba(237, 237, 237, 1);
+  --neutralblack2-1d1d1d: rgba(29, 29, 29, 1);
+  --neutralblack1-0c0c0c: rgba(12, 12, 12, 1);
+  --neutralgray-bdbdbd: rgba(189, 189, 189, 1);
+  --primaryprimary: rgba(37, 99, 235, 1);
+  --neutralgray-f9f9f9: rgba(249, 249, 249, 1);
+  --web-h3-font-family: "Poppins", Helvetica;
+  --web-h3-font-weight: 700;
+  --web-h3-font-size: 32px;
+  --web-h3-letter-spacing: 0px;
+  --web-h3-line-height: normal;
+  --web-h3-font-style: normal;
+  --web-body-normal-font-family: "Poppins", Helvetica;
+  --web-body-normal-font-weight: 600;
+  --web-body-normal-font-size: 16px;
+  --web-body-normal-letter-spacing: 0px;
+  --web-body-normal-line-height: normal;
+  --web-body-normal-font-style: normal;
+  --web-caption-LG-font-family: "Poppins", Helvetica;
+  --web-caption-LG-font-weight: 600;
+  --web-caption-LG-font-size: 14px;
+  --web-caption-LG-letter-spacing: 0px;
+  --web-caption-LG-line-height: normal;
+  --web-caption-LG-font-style: normal;
+}

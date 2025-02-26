@@ -1,0 +1,1554 @@
+.edu-ai-final {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.edu-ai-final .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 1652px;
+  height: 5913px;
+  position: relative;
+}
+
+.edu-ai-final .group {
+  position: absolute;
+  width: 1654px;
+  height: 360px;
+  top: 5553px;
+  left: 0;
+}
+
+.edu-ai-final .overlap-group {
+  position: relative;
+  width: 1652px;
+  height: 360px;
+  background-color: #0039b4;
+}
+
+.edu-ai-final .group-2 {
+  position: absolute;
+  width: 182px;
+  height: 152px;
+  top: 65px;
+  left: 964px;
+}
+
+.edu-ai-final .text-wrapper {
+  position: absolute;
+  width: 172px;
+  top: 45px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-2 {
+  position: absolute;
+  width: 141px;
+  top: 73px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-3 {
+  position: absolute;
+  width: 63px;
+  top: 101px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-4 {
+  position: absolute;
+  width: 107px;
+  top: 129px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-5 {
+  position: absolute;
+  width: 87px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .overlap {
+  position: absolute;
+  width: 740px;
+  height: 164px;
+  top: 56px;
+  left: 153px;
+}
+
+.edu-ai-final .group-3 {
+  position: absolute;
+  width: 740px;
+  height: 155px;
+  top: 9px;
+  left: 0;
+}
+
+.edu-ai-final .text-wrapper-6 {
+  position: absolute;
+  width: 77px;
+  top: 45px;
+  left: 633px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .p {
+  position: absolute;
+  width: 257px;
+  top: 59px;
+  left: 0;
+  font-family: var(--web-body-normal-font-family);
+  font-weight: var(--web-body-normal-font-weight);
+  color: var(--neutralwhite);
+  font-size: var(--web-body-normal-font-size);
+  letter-spacing: var(--web-body-normal-letter-spacing);
+  line-height: var(--web-body-normal-line-height);
+  font-style: var(--web-body-normal-font-style);
+}
+
+.edu-ai-final .text-wrapper-7 {
+  position: absolute;
+  width: 59px;
+  top: 73px;
+  left: 633px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-8 {
+  position: absolute;
+  width: 95px;
+  top: 101px;
+  left: 633px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-9 {
+  position: absolute;
+  width: 71px;
+  top: 129px;
+  left: 633px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-10 {
+  position: absolute;
+  width: 92px;
+  top: 0;
+  left: 633px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-11 {
+  position: absolute;
+  width: 266px;
+  top: 0;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .group-4 {
+  position: absolute;
+  width: 272px;
+  height: 146px;
+  top: 65px;
+  left: 1218px;
+}
+
+.edu-ai-final .text-wrapper-12 {
+  position: absolute;
+  width: 267px;
+  top: 45px;
+  left: 1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 18px;
+}
+
+.edu-ai-final .text-wrapper-13 {
+  position: absolute;
+  width: 140px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .typcn-social-twitter-wrapper {
+  position: absolute;
+  width: 37px;
+  height: 32px;
+  top: 114px;
+  left: 52px;
+  background-color: #d9d9d9;
+  border-radius: 18.36px / 16px;
+}
+
+.edu-ai-final .img {
+  position: absolute;
+  width: 28px;
+  height: 24px;
+  top: 4px;
+  left: 5px;
+}
+
+.edu-ai-final .typcn-social-wrapper {
+  position: absolute;
+  width: 37px;
+  height: 32px;
+  top: 114px;
+  left: 0;
+  background-color: #d9d9d9;
+  border-radius: 18.36px / 16px;
+}
+
+.edu-ai-final .ion-social-youtube-wrapper {
+  position: absolute;
+  width: 37px;
+  height: 32px;
+  top: 114px;
+  left: 155px;
+  background-color: #d9d9d9;
+  border-radius: 18.36px / 16px;
+}
+
+.edu-ai-final .ion-social-youtube {
+  position: absolute;
+  width: 21px;
+  height: 18px;
+  top: 7px;
+  left: 8px;
+}
+
+.edu-ai-final .img-wrapper {
+  position: absolute;
+  width: 37px;
+  height: 32px;
+  top: 114px;
+  left: 103px;
+  background-color: #d9d9d9;
+  border-radius: 18.36px / 16px;
+}
+
+.edu-ai-final .group-wrapper {
+  position: absolute;
+  width: 1440px;
+  height: 814px;
+  top: 3819px;
+  left: 113px;
+}
+
+.edu-ai-final .overlap-wrapper {
+  position: relative;
+  width: 1144px;
+  height: 784px;
+  top: 30px;
+  left: 148px;
+}
+
+.edu-ai-final .overlap-2 {
+  position: relative;
+  height: 784px;
+}
+
+.edu-ai-final .overlap-group-wrapper {
+  position: absolute;
+  width: 463px;
+  height: 564px;
+  top: 0;
+  left: 681px;
+}
+
+.edu-ai-final .overlap-group-2 {
+  position: relative;
+  height: 564px;
+}
+
+.edu-ai-final .rectangle {
+  position: absolute;
+  width: 438px;
+  height: 564px;
+  top: 0;
+  left: 0;
+  background-color: #0039b4;
+  border-radius: 250px 250px 20px 20px;
+}
+
+.edu-ai-final .rectangle-2 {
+  position: absolute;
+  width: 438px;
+  height: 564px;
+  top: 0;
+  left: 25px;
+  border-radius: 250px 250px 20px 20px;
+  border: 3px solid;
+  border-color: #0039b4;
+}
+
+.edu-ai-final .untitled {
+  position: absolute;
+  width: 316px;
+  height: 484px;
+  top: 80px;
+  left: 61px;
+  object-fit: cover;
+}
+
+.edu-ai-final .div-wrapper {
+  position: absolute;
+  width: 1086px;
+  height: 648px;
+  top: 136px;
+  left: 0;
+}
+
+.edu-ai-final .group-5 {
+  position: relative;
+  width: 1092px;
+  height: 648px;
+}
+
+.edu-ai-final .text-wrapper-14 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 44px;
+  text-align: center;
+  letter-spacing: -0.09px;
+  line-height: 62px;
+  white-space: nowrap;
+}
+
+.edu-ai-final .invest-in-your-child {
+  position: absolute;
+  top: 586px;
+  left: 75px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 48px;
+  text-align: center;
+  letter-spacing: -0.10px;
+  line-height: 62px;
+  white-space: nowrap;
+}
+
+.edu-ai-final .we-re-here-for-your {
+  position: absolute;
+  width: 644px;
+  top: 82px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #505050;
+  font-size: 20px;
+  text-align: justify;
+  letter-spacing: -0.04px;
+  line-height: 35px;
+}
+
+.edu-ai-final .group-6 {
+  position: absolute;
+  width: 178px;
+  height: 50px;
+  top: 268px;
+  left: 0;
+  background-color: #febc18;
+  border-radius: 12px;
+}
+
+.edu-ai-final .group-7 {
+  position: relative;
+  width: 102px;
+  height: 27px;
+  top: 12px;
+  left: 39px;
+}
+
+.edu-ai-final .text-wrapper-15 {
+  position: absolute;
+  height: 27px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .group-8 {
+  position: absolute;
+  width: 1440px;
+  height: 638px;
+  top: 3121px;
+  left: 105px;
+}
+
+.edu-ai-final .group-9 {
+  position: relative;
+  width: 1199px;
+  height: 578px;
+  top: 30px;
+  left: 148px;
+}
+
+.edu-ai-final .group-10 {
+  height: 578px;
+}
+
+.edu-ai-final .group-11 {
+  position: relative;
+  width: 1199px;
+  height: 578px;
+}
+
+.edu-ai-final .group-12 {
+  position: absolute;
+  width: 476px;
+  height: 578px;
+  top: 0;
+  left: 0;
+}
+
+.edu-ai-final .overlap-group-3 {
+  position: relative;
+  height: 578px;
+}
+
+.edu-ai-final .group-13 {
+  position: absolute;
+  width: 476px;
+  height: 456px;
+  top: 0;
+  left: 0;
+}
+
+.edu-ai-final .untitled-2 {
+  position: absolute;
+  width: 359px;
+  height: 520px;
+  top: 58px;
+  left: 58px;
+  object-fit: cover;
+}
+
+.edu-ai-final .group-14 {
+  position: absolute;
+  width: 614px;
+  height: 350px;
+  top: 43px;
+  left: 589px;
+}
+
+.edu-ai-final .our-platform-is {
+  position: absolute;
+  width: 509px;
+  top: 144px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 20px;
+  text-align: justify;
+  letter-spacing: 0;
+  line-height: 34px;
+}
+
+.edu-ai-final .best-educational-AI {
+  position: absolute;
+  width: 608px;
+  top: 0;
+  left: 2px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: transparent;
+  font-size: 44px;
+  letter-spacing: -0.09px;
+  line-height: 62px;
+}
+
+.edu-ai-final .span {
+  color: #000000;
+  letter-spacing: -0.04px;
+}
+
+.edu-ai-final .text-wrapper-16 {
+  color: #0039b4;
+  letter-spacing: -0.04px;
+}
+
+.edu-ai-final .text-wrapper-17 {
+  color: #febc18;
+  letter-spacing: -0.04px;
+}
+
+.edu-ai-final .group-15 {
+  position: absolute;
+  width: 181px;
+  height: 50px;
+  top: 300px;
+  left: 0;
+  background-color: #0039b4;
+  border-radius: 12px;
+}
+
+.edu-ai-final .group-16 {
+  position: relative;
+  width: 105px;
+  height: 27px;
+  top: 12px;
+  left: 39px;
+}
+
+.edu-ai-final .text-wrapper-18 {
+  position: absolute;
+  height: 27px;
+  top: 0;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .group-17 {
+  position: absolute;
+  width: 1440px;
+  height: 741px;
+  top: 2320px;
+  left: 106px;
+}
+
+.edu-ai-final .group-18 {
+  position: relative;
+  width: 1164px;
+  height: 681px;
+  top: 30px;
+  left: 128px;
+}
+
+.edu-ai-final .group-19 {
+  position: absolute;
+  width: 677px;
+  height: 120px;
+  top: 0;
+  left: 255px;
+}
+
+.edu-ai-final .text-wrapper-19 {
+  position: absolute;
+  width: 673px;
+  top: 72px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-20 {
+  position: absolute;
+  top: 0;
+  left: 45px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 44px;
+  text-align: center;
+  letter-spacing: -0.09px;
+  line-height: 62px;
+  white-space: nowrap;
+}
+
+.edu-ai-final .group-20 {
+  position: absolute;
+  width: 1164px;
+  height: 506px;
+  top: 175px;
+  left: 0;
+}
+
+.edu-ai-final .group-21 {
+  position: absolute;
+  width: 390px;
+  height: 243px;
+  top: 5px;
+  left: 0;
+}
+
+.edu-ai-final .overlap-group-4 {
+  position: relative;
+  width: 386px;
+  height: 243px;
+}
+
+.edu-ai-final .rectangle-3 {
+  position: absolute;
+  width: 340px;
+  height: 243px;
+  top: 0;
+  left: 46px;
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.edu-ai-final .AI-powered {
+  position: absolute;
+  width: 357px;
+  top: 77px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .key-alt {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 25px;
+  left: 152px;
+}
+
+.edu-ai-final .text-wrapper-21 {
+  position: absolute;
+  width: 344px;
+  top: 117px;
+  left: 9px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 16px;
+  text-align: justify;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.edu-ai-final .overlap-3 {
+  position: absolute;
+  width: 678px;
+  height: 248px;
+  top: 0;
+  left: 444px;
+}
+
+.edu-ai-final .group-22 {
+  position: absolute;
+  width: 353px;
+  height: 243px;
+  top: 0;
+  left: 0;
+}
+
+.edu-ai-final .overlap-4 {
+  position: relative;
+  width: 349px;
+  height: 243px;
+}
+
+.edu-ai-final .rectangle-4 {
+  position: absolute;
+  width: 340px;
+  height: 243px;
+  top: 0;
+  left: 9px;
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.edu-ai-final .fun-coding-AI {
+  position: absolute;
+  top: 77px;
+  left: 3px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .monitor-alt {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 25px;
+  left: 93px;
+}
+
+.edu-ai-final .text-wrapper-22 {
+  position: absolute;
+  width: 280px;
+  top: 115px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 16px;
+  text-align: justify;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.edu-ai-final .group-23 {
+  position: absolute;
+  width: 345px;
+  height: 243px;
+  top: 5px;
+  left: 333px;
+}
+
+.edu-ai-final .overlap-5 {
+  position: relative;
+  width: 341px;
+  height: 243px;
+}
+
+.edu-ai-final .rectangle-5 {
+  position: absolute;
+  width: 340px;
+  height: 243px;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.edu-ai-final .text-wrapper-23 {
+  position: absolute;
+  top: 72px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .tabler-certificate {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 25px;
+  left: 149px;
+}
+
+.edu-ai-final .text-wrapper-24 {
+  position: absolute;
+  width: 339px;
+  top: 117px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 16px;
+  text-align: justify;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.edu-ai-final .overlap-6 {
+  position: absolute;
+  width: 724px;
+  height: 243px;
+  top: 258px;
+  left: 444px;
+}
+
+.edu-ai-final .group-24 {
+  position: absolute;
+  width: 391px;
+  height: 243px;
+  top: 0;
+  left: 333px;
+}
+
+.edu-ai-final .overlap-7 {
+  position: relative;
+  width: 387px;
+  height: 243px;
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.edu-ai-final .text-wrapper-25 {
+  position: absolute;
+  top: 83px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-26 {
+  position: absolute;
+  width: 340px;
+  top: 122px;
+  left: 1px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 16px;
+  text-align: justify;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.edu-ai-final .group-25 {
+  position: absolute;
+  width: 535px;
+  height: 243px;
+  top: 0;
+  left: 0;
+}
+
+.edu-ai-final .overlap-8 {
+  position: absolute;
+  width: 301px;
+  height: 243px;
+  top: 0;
+  left: 0;
+}
+
+.edu-ai-final .rectangle-6 {
+  position: absolute;
+  width: 292px;
+  height: 243px;
+  top: 0;
+  left: 9px;
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.edu-ai-final .text-wrapper-27 {
+  position: absolute;
+  top: 83px;
+  left: 3px;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .badge-check {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 30px;
+  left: 87px;
+}
+
+.edu-ai-final .text-wrapper-28 {
+  position: absolute;
+  width: 289px;
+  top: 122px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 16px;
+  text-align: justify;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.edu-ai-final .badge-check-2 {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 39px;
+  left: 487px;
+}
+
+.edu-ai-final .group-26 {
+  position: absolute;
+  width: 383px;
+  height: 243px;
+  top: 263px;
+  left: 9px;
+}
+
+.edu-ai-final .overlap-9 {
+  position: relative;
+  width: 379px;
+  height: 243px;
+}
+
+.edu-ai-final .rectangle-7 {
+  position: absolute;
+  width: 340px;
+  height: 243px;
+  top: 0;
+  left: 39px;
+  background-color: #ffffff;
+  border-radius: 7px;
+}
+
+.edu-ai-final .user {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  top: 25px;
+  left: 138px;
+}
+
+.edu-ai-final .text-wrapper-29 {
+  position: absolute;
+  top: 77px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 500;
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: -0.04px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-30 {
+  position: absolute;
+  width: 333px;
+  top: 123px;
+  left: 0;
+  font-family: "Poppins", Helvetica;
+  font-weight: 400;
+  color: #666768;
+  font-size: 16px;
+  text-align: justify;
+  letter-spacing: -0.03px;
+  line-height: normal;
+}
+
+.edu-ai-final .overlap-10 {
+  position: absolute;
+  width: 1683px;
+  height: 1452px;
+  top: -15px;
+  left: 0;
+}
+
+.edu-ai-final .text-wrapper-31 {
+  top: 36px;
+  left: 241px;
+  position: absolute;
+  width: 232px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .rectangle-8 {
+  position: absolute;
+  width: 1683px;
+  height: 1025px;
+  top: 0;
+  left: 0;
+  background-color: #0039b4;
+}
+
+.edu-ai-final .welcome-to-edu-ai {
+  position: absolute;
+  width: 734px;
+  top: 1119px;
+  left: 543px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 63px;
+  letter-spacing: -1.26px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-32 {
+  color: #000000;
+  letter-spacing: -0.79px;
+}
+
+.edu-ai-final .text-wrapper-33 {
+  color: #febc18;
+  letter-spacing: -0.79px;
+}
+
+.edu-ai-final .we-offer-an-engaging {
+  position: absolute;
+  width: 1239px;
+  top: 1275px;
+  left: 211px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: -0.80px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-34 {
+  color: #000000;
+  letter-spacing: -0.32px;
+}
+
+.edu-ai-final .text-wrapper-35 {
+  color: #fda909;
+  letter-spacing: -0.32px;
+}
+
+.edu-ai-final .light {
+  width: 908px;
+  height: 881px;
+  left: 0;
+  position: absolute;
+  top: 15px;
+}
+
+.edu-ai-final .light-2 {
+  width: 714px;
+  height: 1437px;
+  left: 938px;
+  position: absolute;
+  top: 15px;
+}
+
+.edu-ai-final .text-wrapper-36 {
+  position: absolute;
+  width: 52px;
+  top: 166px;
+  left: 496px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-37 {
+  top: 145px;
+  left: 224px;
+  position: absolute;
+  width: 232px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .text-wrapper-38 {
+  position: absolute;
+  width: 82px;
+  top: 166px;
+  left: 640px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .text-wrapper-39 {
+  position: absolute;
+  width: 82px;
+  top: 166px;
+  left: 814px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .mask-group {
+  position: absolute;
+  width: 551px;
+  height: 405px;
+  top: 272px;
+  left: 896px;
+}
+
+.edu-ai-final .your-modern-online {
+  position: absolute;
+  width: 734px;
+  top: 321px;
+  left: 224px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 63px;
+  letter-spacing: -1.26px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-40 {
+  color: #ffffff;
+  letter-spacing: -0.79px;
+}
+
+.edu-ai-final .text-wrapper-41 {
+  position: absolute;
+  top: 767px;
+  left: 222px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 32px;
+  letter-spacing: -0.64px;
+  line-height: normal;
+}
+
+.edu-ai-final .your-child-s-AI {
+  position: absolute;
+  width: 592px;
+  top: 500px;
+  left: 222px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: transparent;
+  font-size: 33px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-42 {
+  color: #ffffff;
+}
+
+.edu-ai-final .text-wrapper-43 {
+  color: #febc18;
+}
+
+.edu-ai-final .text-wrapper-44 {
+  position: absolute;
+  top: 860px;
+  left: 222px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .text-wrapper-45 {
+  position: absolute;
+  top: 860px;
+  left: 459px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #0039b4;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .text-wrapper-46 {
+  position: absolute;
+  top: 860px;
+  left: 640px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #0039b4;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .rectangle-9 {
+  position: absolute;
+  width: 260px;
+  height: 68px;
+  top: 650px;
+  left: 224px;
+}
+
+.edu-ai-final .rectangle-10 {
+  position: absolute;
+  width: 260px;
+  height: 68px;
+  top: 650px;
+  left: 509px;
+  background-color: #ffffff;
+  border-radius: 30px 30px 0px 30px;
+}
+
+.edu-ai-final .rectangle-11 {
+  position: absolute;
+  width: 151px;
+  height: 58px;
+  top: 164px;
+  left: 1285px;
+  background-color: #f6aa37;
+  border-radius: 30px 30px 0px 30px;
+}
+
+.edu-ai-final .text-wrapper-47 {
+  position: absolute;
+  width: 133px;
+  top: 669px;
+  left: 288px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .text-wrapper-48 {
+  position: absolute;
+  width: 209px;
+  top: 669px;
+  left: 573px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .text-wrapper-49 {
+  position: absolute;
+  width: 113px;
+  top: 180px;
+  left: 1334px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 20px;
+  letter-spacing: -0.40px;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .ellipse {
+  top: 854px;
+  left: 896px;
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  background-color: #fda909;
+  border-radius: 19.5px;
+}
+
+.edu-ai-final .ellipse-2 {
+  top: 272px;
+  left: 255px;
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  background-color: #fda909;
+  border-radius: 19.5px;
+}
+
+.edu-ai-final .ellipse-3 {
+  top: 166px;
+  left: 1209px;
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  background-color: #fda909;
+  border-radius: 19.5px;
+}
+
+.edu-ai-final .ellipse-4 {
+  top: 854px;
+  left: 1153px;
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  background-color: #fda909;
+  border-radius: 19.5px;
+}
+
+.edu-ai-final .ellipse-5 {
+  top: 854px;
+  left: 1391px;
+  position: absolute;
+  width: 39px;
+  height: 39px;
+  background-color: #fda909;
+  border-radius: 19.5px;
+}
+
+.edu-ai-final .mask-group-2 {
+  position: absolute;
+  width: 181px;
+  height: 335px;
+  top: 705px;
+  left: 1199px;
+}
+
+.edu-ai-final .mask-group-3 {
+  position: absolute;
+  width: 343px;
+  height: 304px;
+  top: 1474px;
+  left: 200px;
+}
+
+.edu-ai-final .mask-group-4 {
+  position: absolute;
+  width: 343px;
+  height: 304px;
+  top: 1474px;
+  left: 652px;
+}
+
+.edu-ai-final .mask-group-5 {
+  position: absolute;
+  width: 343px;
+  height: 304px;
+  top: 1474px;
+  left: 1105px;
+}
+
+.edu-ai-final .overlap-11 {
+  position: absolute;
+  width: 1632px;
+  height: 44px;
+  top: 1844px;
+  left: 196px;
+}
+
+.edu-ai-final .text-wrapper-50 {
+  position: absolute;
+  width: 734px;
+  top: 0;
+  left: 0;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #043ab3;
+  font-size: 36px;
+  letter-spacing: -0.72px;
+  line-height: normal;
+}
+
+.edu-ai-final .AI-coding-education {
+  position: absolute;
+  width: 734px;
+  top: 0;
+  left: 448px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #043ab3;
+  font-size: 36px;
+  letter-spacing: -0.72px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-51 {
+  position: absolute;
+  width: 734px;
+  top: 0;
+  left: 898px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #043ab3;
+  font-size: 36px;
+  letter-spacing: -0.72px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-52 {
+  position: absolute;
+  width: 388px;
+  top: 1959px;
+  left: 200px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-53 {
+  position: absolute;
+  width: 453px;
+  top: 1959px;
+  left: 637px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: normal;
+}
+
+.edu-ai-final .frame {
+  padding: 10px;
+  top: 1952px;
+  left: 1090px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+}
+
+.edu-ai-final .text-wrapper-54 {
+  position: relative;
+  width: 453px;
+  margin-top: -1.00px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 24px;
+  letter-spacing: -0.48px;
+  line-height: normal;
+}
+
+.edu-ai-final .frame-2 {
+  padding: 23px 44px;
+  top: 5339px;
+  left: 653px;
+  background-color: #febc18;
+  border-radius: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+}
+
+.edu-ai-final .text-wrapper-55 {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 48px;
+  text-align: center;
+  letter-spacing: -0.96px;
+  line-height: normal;
+}
+
+.edu-ai-final .teen-girl-with-lot {
+  width: 1151px;
+  height: 767px;
+  top: 10068px;
+  left: 4436px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.edu-ai-final .teen-girl-with-lot-2 {
+  width: 949px;
+  height: 632px;
+  top: 4670px;
+  left: 352px;
+  position: absolute;
+  object-fit: cover;
+}
