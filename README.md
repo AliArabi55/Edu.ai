@@ -76,3 +76,21 @@ Edu-ai (Startup & Microsoft AI Project)
 - Course content storage structure
 - API authentication system
 - Basic CRUD operations
+
+
+#### Sprint 3: AI Integration \& Content Generation 🤖
+
+**Duration:** 2 weeks
+**Goals:**
+
+- Integrate Azure OpenAI Service
+- Implement basic content generation
+- Create educational content templates
+- Setup content management system
+
+**Key Deliverables:**
+
+- AI-powered lesson generator
+- Content quality filtering
+- Basic prompt engineering
+- Educational content database
