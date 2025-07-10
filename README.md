@@ -7,3 +7,7 @@ Edu-ai (Startup & Microsoft AI Project)
 ## 🎯 Project Overview
 
 **Edu.ai** is an innovative AI-powered educational platform designed to teach programming to children aged 6-18. The platform leverages cutting-edge Azure services to deliver personalized, interactive learning experiences through AI-driven avatars and intelligent content generation.
+
+[^1]
+
+## 🎪 Key Technical Recommendations
