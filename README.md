@@ -136,3 +136,22 @@ Edu-ai (Startup & Microsoft AI Project)
 - Audio speed controls
 - Language selection
 - Accessibility features
+
+
+
+#### Sprint 6: Interactive Q\&A System 🙋
+
+**Duration:** 2 weeks
+**Goals:**
+
+- Build question submission interface
+- Implement real-time question processing
+- Create question queue management
+- Handle edge cases and errors
+
+**Key Deliverables:**
+
+- "Raise hand" functionality
+- Question categorization
+- Real-time response system
+- Error handling mechanisms
