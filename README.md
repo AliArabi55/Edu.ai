@@ -22,3 +22,15 @@ Edu-ai (Startup & Microsoft AI Project)
 - **Flexible:** Real-time content updates without retraining
 - **Transparent:** Clear source attribution for educational content
 - **Maintainable:** Easy content base updates
+
+
+### 🎭 Avatar Strategy
+
+**Recommendation:** Start with prebuilt avatars, upgrade to custom later[^4]
+
+**Rationale:**
+
+- Custom avatar training: \$600-1400 (one-time)
+- Custom avatar hosting: \$430+ monthly per model[^5]
+- Prebuilt avatars sufficient for MVP
+- Can upgrade based on user feedback
