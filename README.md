@@ -94,3 +94,23 @@ Edu-ai (Startup & Microsoft AI Project)
 - Content quality filtering
 - Basic prompt engineering
 - Educational content database
+
+
+
+
+#### Sprint 4: RAG Implementation \& Knowledge Base 📚
+
+**Duration:** 2 weeks
+**Goals:**
+
+- Implement Azure AI Search for RAG
+- Build educational knowledge base
+- Setup document indexing and retrieval
+- Integrate RAG with content generation
+
+**Key Deliverables:**
+
+- Searchable knowledge base
+- RAG-powered Q\&A system
+- Content source attribution
+- Contextual learning materials
