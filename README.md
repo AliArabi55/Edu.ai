@@ -1,13 +1,25 @@
 <img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" class="logo" width="120"/>
 
-# Why RAG Is Superior and How to Implement It
+# 🚀 Edu.ai - Comprehensive Sprint Plan for AI-Powered Educational Platform
 
-## 🔍 Why RAG (Retrieval-Augmented Generation) Is Better
+## 🎯 Project Overview
 
-- **Cost Efficiency:** No need to re-train large models—only pay for retrieval and generation.
-- **Up-to-Date Content:** Instantly reflect new additions to your knowledge base without retraining.
-- **Transparent Sourcing:** Each answer can cite the document or paragraph it came from.
-- **Scalability:** Easily index thousands of pages; retrieval scales independently of model size.
+**Edu.ai** is an innovative AI-powered educational platform designed to teach programming to children aged 6-18. The platform leverages cutting-edge Azure services to deliver personalized, interactive learning experiences through AI-driven avatars and intelligent content generation.
+
+[^1]
+
+## 🎪 Key Technical Recommendations
+
+### 🔍 RAG vs Fine-tuning Strategy
+
+**Recommendation:** Use RAG (Retrieval-Augmented Generation) with Azure AI Search instead of fine-tuning[^2]
+
+**Benefits:**
+
+- **Cost-effective:** RAG is significantly cheaper than fine-tuning (\$1.70 per million tokens)[^3]
+- **Flexible:** Real-time content updates without retraining
+- **Transparent:** Clear source attribution for educational content
+- **Maintainable:** Easy content base updates
 
 
 ## ⚙️ How to Set Up RAG on Azure
