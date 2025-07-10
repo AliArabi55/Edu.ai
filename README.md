@@ -1,1 +1,1 @@
-# Edu.ai
+Edu-ai (Startup & Microsoft AI Project)
