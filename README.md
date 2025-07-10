@@ -114,3 +114,25 @@ Edu-ai (Startup & Microsoft AI Project)
 - RAG-powered Q\&A system
 - Content source attribution
 - Contextual learning materials
+
+
+[^2]
+
+### 🔧 Phase 2: Feature Enhancement (8 weeks)
+
+#### Sprint 5: Text-to-Speech \& Audio Features 🎵
+
+**Duration:** 2 weeks
+**Goals:**
+
+- Integrate Azure Speech Services
+- Implement text-to-speech functionality
+- Add audio playback controls
+- Support multiple languages
+
+**Key Deliverables:**
+
+- Natural voice narration
+- Audio speed controls
+- Language selection
+- Accessibility features
