@@ -11,3 +11,14 @@ Edu-ai (Startup & Microsoft AI Project)
 [^1]
 
 ## 🎪 Key Technical Recommendations
+
+### 🔍 RAG vs Fine-tuning Strategy
+
+**Recommendation:** Use RAG (Retrieval-Augmented Generation) with Azure AI Search instead of fine-tuning[^2]
+
+**Benefits:**
+
+- **Cost-effective:** RAG is significantly cheaper than fine-tuning (\$1.70 per million tokens)[^3]
+- **Flexible:** Real-time content updates without retraining
+- **Transparent:** Clear source attribution for educational content
+- **Maintainable:** Easy content base updates
