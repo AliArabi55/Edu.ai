@@ -49,3 +49,30 @@ Edu-ai (Startup & Microsoft AI Project)
 - Setup Azure Static Web Apps hosting
 - Implement responsive navigation system
 - Create basic component library
+
+
+**Key Deliverables:**
+
+- Functional landing page
+- User registration/login interface
+- Course selection interface
+- Mobile-responsive design
+
+[^6]
+
+#### Sprint 2: Backend Architecture \& Database 🗄️
+
+**Duration:** 2 weeks
+**Goals:**
+
+- Setup Azure Cosmos DB with proper schema
+- Implement FastAPI backend structure
+- Create core API endpoints
+- Configure Azure Functions for serverless operations
+
+**Key Deliverables:**
+
+- User management system
+- Course content storage structure
+- API authentication system
+- Basic CRUD operations
