@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edu.ai - اختبار 1</title>
+    <link rel="stylesheet" href="../shared/globals.css" />
+    <link rel="stylesheet" href="../shared/styleguide.css" />
+    <link rel="stylesheet" href="../shared/interactive-enhancements.css" />
     <link rel="stylesheet" href="globals.css" />
     <link rel="stylesheet" href="styleguide.css" />
     <link rel="stylesheet" href="style.css" />
@@ -153,16 +158,57 @@
             An interactive AI-powered platform teaching kids and teens (6-18) coding and AI skills for a smarter future.
           </p>
         </div>
-        <div class="div-wrapper"><div class="text-wrapper-20">A type of smartphone.</div></div>
-        <div class="frame-4">
+        <div class="div-wrapper" onclick="selectAnswer(this, false)"><div class="text-wrapper-20">A type of smartphone.</div></div>
+        <div class="frame-4" onclick="selectAnswer(this, true)">
           <p class="text-wrapper-21">
             A computer system that can perform tasks that usually require human intelligence.
           </p>
         </div>
-        <div class="frame-5"><p class="text-wrapper-22">A robot that builds cars.</p></div>
-        <div class="frame-6"><p class="text-wrapper-20">A game played by computers.</p></div>
+        <div class="frame-5" onclick="selectAnswer(this, false)"><p class="text-wrapper-22">A robot that builds cars.</p></div>
+        <div class="frame-6" onclick="selectAnswer(this, false)"><p class="text-wrapper-20">A game played by computers.</p></div>
         <div class="frame-7"><div class="text-wrapper-23">What is Artificial Intelligence?</div></div>
       </div>
     </div>
+    <script src="../shared/navigation.js"></script>
+    <script>
+      function selectAnswer(element, isCorrect) {
+        // Remove previous selections
+        document.querySelectorAll('.div-wrapper, .frame-4, .frame-5, .frame-6').forEach(el => {
+          el.classList.remove('selected', 'correct', 'incorrect');
+          el.style.background = '';
+        });
+        
+        // Add selection styling
+        element.classList.add('selected');
+        
+        if (isCorrect) {
+          element.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+          element.style.color = 'white';
+          
+          // Show success message and navigate after delay
+          setTimeout(() => {
+            if (window.EduaiUtils) {
+              window.EduaiUtils.showNotification('إجابة صحيحة! 🎉', 'success');
+            }
+            setTimeout(() => {
+              window.location.href = '../8.Score/index.html';
+            }, 2000);
+          }, 1000);
+        } else {
+          element.style.background = 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)';
+          element.style.color = 'white';
+          
+          // Show try again message
+          setTimeout(() => {
+            if (window.EduaiUtils) {
+              window.EduaiUtils.showNotification('حاول مرة أخرى! 🤔', 'error');
+            }
+            element.style.background = '';
+            element.style.color = '';
+            element.classList.remove('selected');
+          }, 2000);
+        }
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,82 @@
+/* Additional interactive button styles */
+.frame, .frame-2, .component, .button {
+    transition: all 0.3s ease;
+}
+
+.frame:hover, .frame-2:hover, .component:hover, .button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.frame:active, .frame-2:active, .component:active, .button:active {
+    transform: translateY(0);
+}
+
+/* Interactive hover effects for clickable elements */
+[onclick], [href] {
+    transition: all 0.3s ease;
+}
+
+[onclick]:hover, [href]:hover {
+    opacity: 0.9;
+    filter: brightness(1.1);
+}
+
+/* Language selection cards hover effect */
+.component:hover {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+}
+
+/* Course cards hover effect */
+.overlap-group-wrapper:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* Quiz answer options hover effect */
+.frame-4:hover, .frame-5:hover, .frame-6:hover, .div-wrapper:hover {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    transform: translateX(5px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Start button special effects */
+.text-wrapper-54:hover, .text-wrapper-7:hover {
+    text-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+}
+
+/* Page indicator animation */
+.page-indicator {
+    animation: fadeInUp 0.6s ease 0.5s both;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .page-navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .page-navigation .nav-button {
+        min-width: 120px;
+    }
+    
+    .page-indicator {
+        order: -1;
+        margin-bottom: 10px;
+    }
+}
