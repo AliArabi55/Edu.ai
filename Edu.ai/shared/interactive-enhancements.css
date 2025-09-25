@@ -1,82 +1,159 @@
-/* Additional interactive button styles */
-.frame, .frame-2, .component, .button {
-    transition: all 0.3s ease;
+/* Interactive enhancements for original design buttons only */
+
+/* Original button hover effects */
+.button,
+.frame,
+.frame-2,
+.component,
+button {
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-.frame:hover, .frame-2:hover, .component:hover, .button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+.button:hover,
+.frame:hover,
+.frame-2:hover,
+.component:hover,
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
+  filter: brightness(1.05);
 }
 
-.frame:active, .frame-2:active, .component:active, .button:active {
-    transform: translateY(0);
+.button:active,
+.frame:active,
+.frame-2:active,
+.component:active,
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
 /* Interactive hover effects for clickable elements */
 [onclick], [href] {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 [onclick]:hover, [href]:hover {
-    opacity: 0.9;
-    filter: brightness(1.1);
+  opacity: 0.9;
+  filter: brightness(1.1);
 }
 
 /* Language selection cards hover effect */
 .component:hover {
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-    border-radius: 12px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 12px;
 }
 
 /* Course cards hover effect */
 .overlap-group-wrapper:hover {
-    transform: scale(1.02);
-    transition: transform 0.3s ease;
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
 }
 
 /* Quiz answer options hover effect */
 .frame-4:hover, .frame-5:hover, .frame-6:hover, .div-wrapper:hover {
-    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
-    transform: translateX(5px);
-    transition: all 0.3s ease;
-    cursor: pointer;
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 /* Start button special effects */
 .text-wrapper-54:hover, .text-wrapper-7:hover {
-    text-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
+  text-shadow: 0 0 8px rgba(37, 99, 235, 0.6);
 }
 
-/* Page indicator animation */
-.page-indicator {
-    animation: fadeInUp 0.6s ease 0.5s both;
+/* Special styling for Sign up buttons */
+.frame[onclick*="signup"],
+.component[onclick*="signup"],
+.button[onclick*="signup"] {
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: white;
 }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Special styling for Login buttons */
+.frame[onclick*="login"],
+.component[onclick*="login"],
+.button[onclick*="login"] {
+  border: 2px solid #2563eb;
+  color: #2563eb;
+  background: transparent;
+}
+
+.frame[onclick*="login"]:hover,
+.component[onclick*="login"]:hover,
+.button[onclick*="login"]:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* Page transition animations */
+.page-enter {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.5s ease;
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Loading state for buttons */
+.loading-button {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.loading-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid transparent;
+  border-top: 2px solid currentColor;
+  border-radius: 50%;
+  animation: buttonSpin 1s linear infinite;
+}
+
+@keyframes buttonSpin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Accessibility improvements */
+.button:focus-visible,
+.frame:focus-visible,
+.frame-2:focus-visible,
+.component:focus-visible,
+button:focus-visible {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
+
+/* Success animation */
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.success-animation {
+  animation: successPulse 0.3s ease-in-out;
 }
 
 /* Responsive improvements */
 @media (max-width: 768px) {
-    .page-navigation {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .page-navigation .nav-button {
-        min-width: 120px;
-    }
-    
-    .page-indicator {
-        order: -1;
-        margin-bottom: 10px;
-    }
+  .button,
+  .frame,
+  .frame-2,
+  .component {
+    touch-action: manipulation;
+    min-height: 44px; /* Minimum touch target size */
+  }
 }

@@ -41,63 +41,23 @@ img {
   padding: 0 20px;
 }
 
-/* Navigation buttons */
-.nav-button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  cursor: pointer;
+/* Enhanced button styling for original design buttons */
+.button, button, .frame, .frame-2, .component {
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
-  text-align: center;
-  min-width: 120px;
+  cursor: pointer;
 }
 
-.nav-button:hover {
+.button:hover, button:hover, .frame:hover, .frame-2:hover, .component:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(37, 99, 235, 0.4);
-  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
 }
 
-.nav-button:active {
+.button:active, button:active, .frame:active, .frame-2:active, .component:active {
   transform: translateY(0);
   box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
 }
 
-.nav-button.secondary {
-  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-  color: #374151;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.nav-button.secondary:hover {
-  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-/* Navigation container */
-.page-navigation {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  gap: 15px;
-  z-index: 1000;
-}
-
-.page-navigation .nav-button {
-  min-width: 100px;
-  font-size: 14px;
-  padding: 10px 20px;
-}
-
-/* Loading animation */
+/* Loading animation for interactive elements */
 .loading {
   opacity: 0.7;
   pointer-events: none;
@@ -113,7 +73,7 @@ img {
   width: 20px;
   height: 20px;
   border: 2px solid transparent;
-  border-top: 2px solid #fff;
+  border-top: 2px solid currentColor;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
@@ -125,17 +85,6 @@ img {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .page-navigation {
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  .page-navigation .nav-button {
-    min-width: 80px;
-    font-size: 12px;
-    padding: 8px 16px;
-  }
-  
   .container {
     padding: 0 15px;
   }

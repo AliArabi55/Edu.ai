@@ -1,15 +1,15 @@
-// Navigation system for Edu.ai platform
+// Enhanced navigation system for Edu.ai platform - Original Design Buttons Only
 class EduaiNavigation {
     constructor() {
         this.pages = [
-            { id: 1, name: "الصفحة الرئيسية", path: "../1.Land page/index.html" },
-            { id: 2, name: "تسجيل الدخول", path: "../2.Login/index.html" },
-            { id: 3, name: "إنشاء حساب", path: "../3.Sign up/index.html" },
-            { id: 4, name: "اختيار اللغة", path: "../4.select language/index.html" },
-            { id: 5, name: "الكورسات", path: "../5.courses/index.html" },
-            { id: 6, name: "بدء الدرس", path: "../6.Start Lesson/index.html" },
-            { id: 7, name: "اختبار 1", path: "../7.Quiz 1/index.html" },
-            { id: 8, name: "النتيجة", path: "../8.Score/index.html" }
+            { id: 1, name: "Landing Page", path: "../1.Land page/index.html" },
+            { id: 2, name: "Login", path: "../2.Login/index.html" },
+            { id: 3, name: "Sign Up", path: "../3.Sign up/index.html" },
+            { id: 4, name: "Select Language", path: "../4.select language/index.html" },
+            { id: 5, name: "Courses", path: "../5.courses/index.html" },
+            { id: 6, name: "Start Lesson", path: "../6.Start Lesson/index.html" },
+            { id: 7, name: "Quiz 1", path: "../7.Quiz 1/index.html" },
+            { id: 8, name: "Score", path: "../8.Score/index.html" }
         ];
         
         this.currentPage = this.getCurrentPageId();
@@ -34,91 +34,19 @@ class EduaiNavigation {
     }
 
     init() {
-        this.createNavigationButtons();
+        // Only add page transitions and utility functions
+        // NO floating navigation buttons
         this.addPageTransition();
         this.handleKeyboardNavigation();
+        this.enhanceOriginalButtons();
     }
 
-    createNavigationButtons() {
-        // Remove existing navigation if present
-        const existingNav = document.querySelector('.page-navigation');
-        if (existingNav) {
-            existingNav.remove();
-        }
-
-        const navContainer = document.createElement('div');
-        navContainer.className = 'page-navigation';
-
-        // Previous button
-        if (this.currentPage > 1) {
-            const prevButton = this.createButton('السابق', () => {
-                this.navigateToPage(this.currentPage - 1);
-            }, 'secondary');
-            navContainer.appendChild(prevButton);
-        }
-
-        // Next button
-        if (this.currentPage < this.pages.length) {
-            const nextButton = this.createButton('التالي', () => {
-                this.navigateToPage(this.currentPage + 1);
-            }, 'primary');
-            navContainer.appendChild(nextButton);
-        }
-
-        // Page indicator
-        const pageIndicator = document.createElement('div');
-        pageIndicator.className = 'page-indicator';
-        pageIndicator.innerHTML = `
-            <span style="
-                background: rgba(255, 255, 255, 0.9);
-                padding: 8px 12px;
-                border-radius: 20px;
-                font-size: 14px;
-                font-weight: 500;
-                color: #374151;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-                margin-left: 10px;
-            ">
-                ${this.currentPage} من ${this.pages.length}
-            </span>
-        `;
-        navContainer.appendChild(pageIndicator);
-
-        document.body.appendChild(navContainer);
-    }
-
-    createButton(text, onClick, type = 'primary') {
-        const button = document.createElement('button');
-        button.className = `nav-button ${type}`;
-        button.textContent = text;
-        button.onclick = onClick;
-        
-        // Add loading state functionality
-        button.addEventListener('click', () => {
-            button.classList.add('loading');
-            setTimeout(() => {
-                button.classList.remove('loading');
-            }, 1000);
+    enhanceOriginalButtons() {
+        // Add smooth transitions to all clickable elements
+        const clickableElements = document.querySelectorAll('[onclick], [href], button, .frame, .component');
+        clickableElements.forEach(element => {
+            element.style.transition = 'all 0.3s ease';
         });
-
-        return button;
-    }
-
-    navigateToPage(pageId) {
-        if (pageId < 1 || pageId > this.pages.length) {
-            return;
-        }
-
-        const targetPage = this.pages[pageId - 1];
-        
-        // Add page transition effect
-        document.body.style.opacity = '0.7';
-        document.body.style.transform = 'scale(0.98)';
-        document.body.style.transition = 'all 0.3s ease';
-
-        setTimeout(() => {
-            window.location.href = targetPage.path;
-        }, 300);
     }
 
     addPageTransition() {
@@ -136,6 +64,7 @@ class EduaiNavigation {
     }
 
     handleKeyboardNavigation() {
+        // Keep keyboard shortcuts for power users
         document.addEventListener('keydown', (e) => {
             if (e.ctrlKey) {
                 switch(e.key) {
@@ -164,95 +93,30 @@ class EduaiNavigation {
         });
     }
 
-    // Method to add quick jump menu
-    addQuickJumpMenu() {
-        const menuButton = document.createElement('button');
-        menuButton.className = 'nav-button secondary';
-        menuButton.style.position = 'fixed';
-        menuButton.style.top = '30px';
-        menuButton.style.right = '30px';
-        menuButton.innerHTML = '☰';
-        menuButton.title = 'قائمة التنقل السريع';
+    navigateToPage(pageId) {
+        if (pageId < 1 || pageId > this.pages.length) {
+            return;
+        }
 
-        const dropdown = document.createElement('div');
-        dropdown.style.cssText = `
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            padding: 8px 0;
-            min-width: 200px;
-            display: none;
-            z-index: 1000;
-            margin-top: 8px;
-        `;
-
-        this.pages.forEach(page => {
-            const option = document.createElement('button');
-            option.style.cssText = `
-                width: 100%;
-                padding: 12px 16px;
-                text-align: right;
-                border: none;
-                background: ${page.id === this.currentPage ? '#f3f4f6' : 'transparent'};
-                color: ${page.id === this.currentPage ? '#2563eb' : '#374151'};
-                font-family: inherit;
-                font-size: 14px;
-                cursor: pointer;
-            `;
-            option.textContent = `${page.id}. ${page.name}`;
-            option.onclick = () => {
-                if (page.id !== this.currentPage) {
-                    this.navigateToPage(page.id);
-                }
-                dropdown.style.display = 'none';
-            };
-            
-            option.onmouseover = () => {
-                if (page.id !== this.currentPage) {
-                    option.style.backgroundColor = '#f9fafb';
-                }
-            };
-            
-            option.onmouseout = () => {
-                if (page.id !== this.currentPage) {
-                    option.style.backgroundColor = 'transparent';
-                }
-            };
-            
-            dropdown.appendChild(option);
-        });
-
-        menuButton.appendChild(dropdown);
+        const targetPage = this.pages[pageId - 1];
         
-        menuButton.onclick = (e) => {
-            e.stopPropagation();
-            dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
-        };
+        // Add page transition effect
+        document.body.style.opacity = '0.7';
+        document.body.style.transform = 'scale(0.98)';
+        document.body.style.transition = 'all 0.3s ease';
 
-        // Close dropdown when clicking outside
-        document.addEventListener('click', () => {
-            dropdown.style.display = 'none';
-        });
-
-        menuButton.style.position = 'relative';
-        document.body.appendChild(menuButton);
+        setTimeout(() => {
+            window.location.href = targetPage.path;
+        }, 300);
     }
 }
 
 // Auto-initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     const navigation = new EduaiNavigation();
-    
-    // Add quick jump menu after a delay
-    setTimeout(() => {
-        navigation.addQuickJumpMenu();
-    }, 1000);
 });
 
-// Add some utility functions for enhanced interactivity
+// Utility functions for enhanced interactivity
 window.EduaiUtils = {
     // Show notification
     showNotification(message, type = 'info') {
@@ -279,7 +143,9 @@ window.EduaiUtils = {
         setTimeout(() => {
             notification.style.animation = 'slideUp 0.3s ease';
             setTimeout(() => {
-                document.body.removeChild(notification);
+                if (document.body.contains(notification)) {
+                    document.body.removeChild(notification);
+                }
             }, 300);
         }, 3000);
     },

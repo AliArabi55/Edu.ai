@@ -1,0 +1,187 @@
+/* Layout fixes for 1.Land page - wider layout and better text spacing */
+
+/* Container width adjustments */
+.edu-ai-final {
+  min-width: 1400px; /* Increased from default */
+  width: 100%;
+  max-width: none; /* Remove max-width constraint */
+}
+
+.edu-ai-final .div {
+  min-width: 1400px;
+  width: 100%;
+  padding: 0 40px; /* Add side padding */
+}
+
+/* Prevent text overlap in main content areas */
+.overlap,
+.overlap-2,
+.overlap-group,
+.overlap-group-2,
+.overlap-group-3 {
+  min-width: 800px; /* Ensure minimum width */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Text containers - prevent overlap */
+.group,
+.group-2,
+.group-3,
+.group-4,
+.group-5,
+.group-6,
+.group-7,
+.group-8,
+.group-9,
+.group-10,
+.group-11,
+.group-12,
+.group-13,
+.group-14 {
+  min-width: 300px;
+  padding: 15px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+/* Specific text element spacing */
+.text-wrapper,
+.text-wrapper-2,
+.text-wrapper-3,
+.text-wrapper-4,
+.text-wrapper-5,
+.text-wrapper-6,
+.text-wrapper-7,
+.text-wrapper-8,
+.text-wrapper-9,
+.text-wrapper-10,
+.text-wrapper-11,
+.text-wrapper-12,
+.text-wrapper-13,
+.text-wrapper-14,
+.text-wrapper-15 {
+  white-space: nowrap; /* Prevent text wrapping */
+  margin: 8px 12px;
+  padding: 8px 16px;
+  display: inline-block;
+  min-width: fit-content;
+}
+
+/* Main content sections - wider spacing */
+.frame,
+.frame-2,
+.frame-3,
+.frame-4,
+.frame-5,
+.frame-6 {
+  min-width: 400px;
+  margin: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Image containers - prevent overlap with text */
+img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px;
+}
+
+/* Navigation area spacing */
+.group-3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  min-width: 800px;
+}
+
+/* Footer and bottom sections */
+.group-4 {
+  margin-top: 40px;
+  padding: 30px;
+  min-width: 100%;
+}
+
+/* Responsive adjustments for wider layout */
+@media (max-width: 1400px) {
+  .edu-ai-final {
+    min-width: 1200px;
+  }
+  
+  .edu-ai-final .div {
+    min-width: 1200px;
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .edu-ai-final {
+    min-width: 1000px;
+  }
+  
+  .edu-ai-final .div {
+    min-width: 1000px;
+    padding: 0 20px;
+  }
+  
+  .overlap,
+  .overlap-2,
+  .overlap-group,
+  .overlap-group-2,
+  .overlap-group-3 {
+    min-width: 600px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .text-wrapper,
+  .text-wrapper-2,
+  .text-wrapper-3,
+  .text-wrapper-4,
+  .text-wrapper-5,
+  .text-wrapper-6,
+  .text-wrapper-7,
+  .text-wrapper-8,
+  .text-wrapper-9,
+  .text-wrapper-10,
+  .text-wrapper-11,
+  .text-wrapper-12,
+  .text-wrapper-13,
+  .text-wrapper-14,
+  .text-wrapper-15 {
+    white-space: normal; /* Allow wrapping on smaller screens */
+    margin: 6px 8px;
+    padding: 6px 12px;
+  }
+}
+
+/* Prevent horizontal scrolling issues */
+body {
+  overflow-x: auto;
+  min-width: 1000px;
+}
+
+/* Ensure content doesn't break layout */
+* {
+  box-sizing: border-box;
+}
+
+/* Additional spacing for specific problem areas */
+.invest-in-your-child,
+.we-re-here-for-your,
+.our-platform-is {
+  line-height: 1.6;
+  margin: 15px 0;
+  padding: 10px;
+  max-width: 600px; /* Prevent overly long lines */
+}
+
+/* Center main content but keep wide layout */
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
