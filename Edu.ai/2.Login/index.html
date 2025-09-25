@@ -11,11 +11,11 @@
       <div class="div">
         <div class="overlap">
           <div class="group">
-            <div class="text-wrapper">About</div>
-            <div class="text-wrapper-2">Home</div>
-            <div class="text-wrapper-3">Edu.ai</div>
-            <div class="text-wrapper-4">Courses</div>
-            <div class="text-wrapper-5">Features</div>
+            <div class="text-wrapper" onclick="window.location.href='../1.Land page/index.html'">About</div>
+            <div class="text-wrapper-2" onclick="window.location.href='../1.Land page/index.html'">Home</div>
+            <div class="text-wrapper-3" onclick="window.location.href='../1.Land page/index.html'">Edu.ai</div>
+            <div class="text-wrapper-4" onclick="window.location.href='../5.courses/index.html'">Courses</div>
+            <div class="text-wrapper-5" onclick="window.location.href='../1.Land page/index.html'">Features</div>
           </div>
         </div>
         <div class="frame">
@@ -28,7 +28,7 @@
           <p class="don-t-have-an">
             <span class="span">Don’t have an Accoount?</span>
             <span class="text-wrapper-7">&nbsp;</span>
-            <span class="text-wrapper-8">Sign Up</span>
+            <span class="text-wrapper-8" onclick="window.location.href='../3.Sign up/index.html'">Sign Up</span>
           </p>
           <div class="frame-2">
             <div class="frame-3">
@@ -37,20 +37,20 @@
                 <p class="new-to-speak-up-sign">
                   <span class="text-wrapper-10">New to Speak Up?</span>
                   <span class="text-wrapper-11">&nbsp;</span>
-                  <span class="text-wrapper-12">Sign Up</span>
+                  <span class="text-wrapper-12" onclick="window.location.href='../3.Sign up/index.html'">Sign Up</span>
                 </p>
               </div>
               <div class="input-with-title">
                 <div class="enter-a-new-password">Email or username</div>
                 <div class="password-box">
-                  <div class="password-wrapper"><p class="password">Enter your Email or username</p></div>
+                  <input type="text" id="usernameInput" style="border:none; background:transparent; width:100%; color:#ffffff; padding:10px; font-family:inherit;" placeholder="Enter your Email or username" />
                   <img class="lock" src="https://c.animaapp.com/smCHOrhL/img/lock-1.svg" />
                 </div>
               </div>
               <div class="input-with-title">
                 <div class="enter-a-new-password">Password</div>
                 <div class="password-box">
-                  <div class="password-wrapper"><div class="password">Enter your Password</div></div>
+                  <input type="password" id="passwordInput" style="border:none; background:transparent; width:100%; color:#ffffff; padding:10px; font-family:inherit;" placeholder="Enter your Password" />
                   <img class="lock" src="https://c.animaapp.com/smCHOrhL/img/lock-1.svg" />
                 </div>
               </div>
@@ -62,7 +62,7 @@
               </div>
               <div class="forget-password">Forget&nbsp;&nbsp;password?</div>
             </div>
-            <button class="button"><div class="text">Log In</div></button>
+            <button class="button" onclick="handleLogin()"><div class="text">Log In</div></button>
           </div>
         </div>
         <img class="mask-group" src="https://c.animaapp.com/smCHOrhL/img/mask-group.png" />
@@ -107,5 +107,20 @@
         </div>
       </div>
     </div>
+    
+    <script>
+      function handleLogin() {
+        const username = document.getElementById('usernameInput').value;
+        const password = document.getElementById('passwordInput').value;
+        
+        // Hardcoded credentials
+        if (username === 'AliArabi' && password === 'AliArabi') {
+          alert('تم تسجيل الدخول بنجاح!');
+          window.location.href = '../4.select language/index.html';
+        } else {
+          alert('خطأ في اسم المستخدم أو كلمة المرور!');
+        }
+      }
+    </script>
   </body>
 </html>

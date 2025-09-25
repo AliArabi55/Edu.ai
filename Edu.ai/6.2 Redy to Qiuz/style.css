@@ -1,0 +1,181 @@
+.edu-ai-final {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  min-width: 1440px;
+  min-height: 1024px;
+  position: relative;
+}
+
+.edu-ai-final .text-wrapper {
+  position: absolute;
+  top: 22px;
+  left: 135px;
+  width: 232px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .teen-girl-with-lot {
+  position: absolute;
+  top: 1495px;
+  left: -5111px;
+  width: 1151px;
+  height: 767px;
+  object-fit: cover;
+}
+
+.edu-ai-final .mask-group {
+  position: absolute;
+  top: 107px;
+  left: 89px;
+  width: 1261px;
+  height: 694px;
+}
+
+.edu-ai-final .image {
+  position: absolute;
+  top: 192px;
+  left: 367px;
+  width: 789px;
+  height: 601px;
+  object-fit: cover;
+}
+
+.edu-ai-final .frame {
+  top: 876px;
+  left: 93px;
+  background-color: #febc18;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 14px;
+  position: absolute;
+  border-radius: 22px;
+}
+
+.edu-ai-final .next {
+  position: relative;
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+}
+
+.edu-ai-final .div {
+  position: relative;
+  width: fit-content;
+  margin-top: -1.00px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: -0.64px;
+  line-height: normal;
+}
+
+.edu-ai-final .div-wrapper {
+  top: 903px;
+  left: 762px;
+  background-color: #60eb3a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 14px;
+  position: absolute;
+  border-radius: 22px;
+}
+
+.edu-ai-final .frame-2 {
+  top: 903px;
+  left: 605px;
+  background-color: #ff474d;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 14px;
+  position: absolute;
+  border-radius: 22px;
+}
+
+.edu-ai-final .p {
+  position: absolute;
+  top: 830px;
+  left: 413px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 32px;
+  text-align: center;
+  letter-spacing: -0.64px;
+  line-height: normal;
+}
+
+.edu-ai-final .group {
+  position: absolute;
+  top: 46px;
+  left: 177px;
+  width: 858px;
+  height: 48px;
+  display: flex;
+}
+
+.edu-ai-final .text-wrapper-2 {
+  width: 232px;
+  height: 48px;
+  font-family: "Inter", Helvetica;
+  font-weight: 700;
+  color: #000000;
+  font-size: 40px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.edu-ai-final .text-wrapper-3 {
+  margin-top: 22px;
+  width: 52px;
+  height: 22px;
+  margin-left: 82px;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0;
+  font-family: "Inter", Helvetica;
+  color: #000000;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-4 {
+  margin-top: 24px;
+  width: 52px;
+  height: 22px;
+  margin-left: 82px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.edu-ai-final .text-wrapper-5 {
+  margin-top: 24px;
+  width: 82px;
+  height: 18px;
+  margin-left: 92px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
