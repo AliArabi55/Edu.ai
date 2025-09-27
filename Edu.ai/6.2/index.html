@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edu.ai - المساعد الصوتي الذكي</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            direction: rtl;
+            text-align: center;
+            color: white;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .status {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .btn.secondary {
+            background: linear-gradient(45deg, #4834d4, #686de0);
+        }
+        
+        .instructions {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: right;
+        }
+        
+        .instructions h3 {
+            color: #f1c40f;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ul {
+            list-style-position: inside;
+            text-align: right;
+        }
+        
+        .instructions li {
+            margin: 10px 0;
+            padding: 5px 0;
+        }
+        
+        .terminal {
+            background: #2c3e50;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            text-align: left;
+            direction: ltr;
+            color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 المساعد الصوتي الذكي</h1>
+        
+        <div class="status">
+            <h2>🎯 حالة Avatar</h2>
+            <p id="avatar-status">جاهز للتشغيل</p>
+        </div>
+        
+        <div class="instructions">
+            <h3>📋 تعليمات التشغيل:</h3>
+            <ul>
+                <li>تأكد من توصيل الميكروفون والسماعات</li>
+                <li>اضغط على "تشغيل المساعد الصوتي" لبدء Avatar</li>
+                <li>تحدث باللغة الإنجليزية مع المساعد</li>
+                <li>اسأل عن مفاهيم البرمجة والذكاء الاصطناعي</li>
+                <li>اضغط Ctrl+C في Terminal لإيقاف المساعد</li>
+            </ul>
+        </div>
+        
+        <div>
+            <button class="btn" onclick="startAvatar()">
+                🎤 تشغيل المساعد الصوتي
+            </button>
+            <a href="../6.3%20Redy%20to%20Qiuz/index.html" class="btn secondary">
+                📚 متابعة إلى الاختبار
+            </a>
+        </div>
+        
+        <div class="terminal">
+            <strong>Command to run Avatar manually:</strong><br>
+            cd "C:\Users\aliar\OneDrive\Documents\GitHub\Edu.ai\Edu.ai\6.2"<br>
+            python Avatar.py --model gpt-4o-realtime-preview --voice alloy
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="../6.1.Start Lesson/index.html" class="btn secondary">
+                ← العودة للدرس
+            </a>
+            <a href="../1.Land page/index.html" class="btn secondary">
+                🏠 الصفحة الرئيسية
+            </a>
+        </div>
+    </div>
+    
+    <script>
+        function startAvatar() {
+            const status = document.getElementById('avatar-status');
+            status.innerHTML = '⏳ جاري تشغيل المساعد الصوتي...';
+            
+            // Show instructions
+            setTimeout(() => {
+                status.innerHTML = '✅ يرجى فتح Terminal وتشغيل الأمر المعروض أدناه';
+                alert('يرجى فتح Terminal (Command Prompt) وتشغيل الأمر التالي:\n\ncd "C:\\Users\\aliar\\OneDrive\\Documents\\GitHub\\Edu.ai\\Edu.ai\\6.2"\npython Avatar.py --model gpt-4o-realtime-preview --voice alloy');
+            }, 2000);
+        }
+        
+        // Check if we came from Start Lesson page
+        if (document.referrer.includes('6.1.Start%20Lesson')) {
+            document.getElementById('avatar-status').innerHTML = '🎉 تم تفعيل المساعد الصوتي بنجاح!';
+            
+            setTimeout(() => {
+                startAvatar();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
