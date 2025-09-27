@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* استيراد خط عربي جميل */
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+/* إعدادات عامة للنصوص العربية */
+body {
+  font-family: 'Tajawal', Arial, sans-serif;
+  direction: rtl;
+  text-align: right;
+}
+
+/* تحسين تأثيرات الأزرار */
+@layer utilities {
+  .btn-hover-lift {
+    @apply transition-all duration-300 ease-in-out transform;
+  }
+  
+  .btn-hover-lift:hover {
+    @apply -translate-y-1 shadow-lg;
+  }
+  
+  .btn-active-press {
+    @apply transition-all duration-150 ease-in-out;
+  }
+  
+  .btn-active-press:active {
+    @apply scale-95 shadow-sm;
+  }
+  
+  .btn-smooth {
+    @apply transition-all duration-200 ease-out;
+  }
+}
+
+/* تأثيرات مخصصة للأزرار */
+.nav-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.nav-button:hover::before {
+  left: 100%;
+}
+
+/* تأثير الموجة عند الضغط */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple-animation 0.6s linear;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
