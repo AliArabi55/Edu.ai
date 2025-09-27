@@ -45,10 +45,10 @@ button:active {
   border-radius: 12px;
 }
 
-/* Course cards hover effect */
+/* Course cards hover effect - بدون zoom */
 .overlap-group-wrapper:hover {
-  transform: scale(1.02);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.3s ease;
 }
 
 /* Quiz answer options hover effect */
@@ -136,15 +136,15 @@ button:focus-visible {
   outline-offset: 2px;
 }
 
-/* Success animation */
-@keyframes successPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+/* Success animation - بدون zoom */
+@keyframes successGlow {
+  0% { box-shadow: 0 0 5px rgba(72, 187, 120, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(72, 187, 120, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(72, 187, 120, 0.5); }
 }
 
 .success-animation {
-  animation: successPulse 0.3s ease-in-out;
+  animation: successGlow 0.3s ease-in-out;
 }
 
 /* Responsive improvements */

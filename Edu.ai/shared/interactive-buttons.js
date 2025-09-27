@@ -9,33 +9,30 @@ document.addEventListener('DOMContentLoaded', function() {
         element.style.cursor = 'pointer';
         
         // Store original styles
-        const originalTransform = element.style.transform || 'none';
         const originalBoxShadow = element.style.boxShadow || 'none';
         
-        // Mouse enter effect (hover)
+        // Mouse enter effect (hover) - بدون zoom
         element.addEventListener('mouseenter', function() {
-            element.style.transform = 'scale(1.05) translateY(-2px)';
             element.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
             element.style.filter = 'brightness(1.1)';
         });
         
         // Mouse leave effect
         element.addEventListener('mouseleave', function() {
-            element.style.transform = originalTransform;
             element.style.boxShadow = originalBoxShadow;
             element.style.filter = 'brightness(1)';
         });
         
-        // Mouse down effect (click start)
+        // Mouse down effect (click start) - بدون zoom
         element.addEventListener('mousedown', function() {
-            element.style.transform = 'scale(0.95) translateY(1px)';
             element.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.2)';
+            element.style.filter = 'brightness(0.9)';
         });
         
         // Mouse up effect (click end)
         element.addEventListener('mouseup', function() {
-            element.style.transform = 'scale(1.05) translateY(-2px)';
             element.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.15)';
+            element.style.filter = 'brightness(1.1)';
         });
     }
     
@@ -193,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', createRipple);
     });
     
-    // Add CSS animation for ripple effect
+    // Add CSS animation for ripple effect - بدون zoom
     const style = document.createElement('style');
     style.textContent = `
         @keyframes ripple {
@@ -210,14 +207,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         .interactive-button:hover {
-            transform: scale(1.05) translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
             filter: brightness(1.1);
         }
         
         .interactive-button:active {
-            transform: scale(0.95) translateY(1px);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            filter: brightness(0.9);
         }
         
         /* Glow effect for important buttons */
@@ -234,20 +230,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        /* Pulse animation for call-to-action buttons */
+        /* Pulse animation for call-to-action buttons - بدون zoom */
         .pulse-button {
-            animation: pulse 2s infinite;
+            animation: pulse-glow 2s infinite;
         }
         
-        @keyframes pulse {
+        @keyframes pulse-glow {
             0% {
-                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
             }
             50% {
-                transform: scale(1.02);
+                box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
             }
             100% {
-                transform: scale(1);
+                box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
             }
         }
         
