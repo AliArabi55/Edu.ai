@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 مشاهدة فيديو Computer Vision Avatar - Edu.ai</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 1000px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .video-info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .video-info h3 {
+            color: #4ecdc4;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .info-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .info-item strong {
+            color: #ff6b6b;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            margin: 20px auto;
+        }
+        
+        .controls {
+            margin-top: 30px;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .btn.secondary {
+            background: linear-gradient(45deg, #9C27B0, #E91E63);
+        }
+        
+        .text-content {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .text-content h4 {
+            color: #4ecdc4;
+            margin-bottom: 15px;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: rgba(76, 175, 80, 0.2);
+            padding: 15px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 150px;
+        }
+        
+        .stat-number {
+            font-size: 2em;
+            font-weight: bold;
+            color: #4CAF50;
+            display: block;
+        }
+        
+        .quality-badge {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            display: inline-block;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://localhost:5000" class="back-link">← العودة للرئيسية</a>
+    
+    <div class="container">
+        <h1>🎬 فيديو Computer Vision Avatar</h1>
+        
+        <div class="video-info">
+            <h3>📊 معلومات الفيديو</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>👤 الشخصية:</strong>
+                    Lisa - Casual Sitting
+                </div>
+                <div class="info-item">
+                    <strong>🗣️ الصوت:</strong>
+                    Jenny Multilingual (EN-US)
+                </div>
+                <div class="info-item">
+                    <strong>📝 عدد الكلمات:</strong>
+                    123 كلمة
+                </div>
+                <div class="info-item">
+                    <strong>⏱️ مدة المعالجة:</strong>
+                    58.5 ثانية
+                </div>
+                <div class="info-item">
+                    <strong>🎥 جودة الفيديو:</strong>
+                    <span class="quality-badge">MP4 HD</span>
+                </div>
+                <div class="info-item">
+                    <strong>💾 الحجم المتوقع:</strong>
+                    ~5-8 MB
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">~49</span>
+                    ثانية مدة الفيديو
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">1.2:1</span>
+                    نسبة المعالجة للمحتوى
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2.1</span>
+                    كلمة/ثانية معالجة
+                </div>
+            </div>
+        </div>
+        
+        <video controls autoplay style="background: #000;">
+            <source src="computer_vision_avatar.mp4" type="video/mp4">
+            <p>متصفحك لا يدعم تشغيل الفيديو. يمكنك <a href="computer_vision_avatar.mp4" download>تحميل الفيديو</a> مباشرة.</p>
+        </video>
+        
+        <div class="controls">
+            <a href="computer_vision_avatar.mp4" download class="btn">📥 تحميل الفيديو</a>
+            <button onclick="playVideo()" class="btn">▶️ تشغيل</button>
+            <button onclick="pauseVideo()" class="btn">⏸️ إيقاف</button>
+            <a href="/tts-avatar" class="btn secondary">🎬 إنشاء فيديو جديد</a>
+        </div>
+        
+        <div class="text-content">
+            <h4>📝 النص المستخدم في الفيديو:</h4>
+            <p style="font-style: italic; background: rgba(255,255,255,0.1); padding: 15px; border-radius: 10px;">
+                "Hello, my friends! My name is Loly, and today I will teach you something special from Microsoft Learn. We will talk about one type of Artificial Intelligence called Computer Vision.
+                <br><br>
+                Computer Vision helps computers see and understand pictures. Just like your eyes help you know if you see a dog or a cat, AI can look at a picture and say, 'This is a cat!' or 'This is a car!'
+                <br><br>
+                For example, when you use your phone camera and it puts a square on your face, that is Computer Vision at work. It is like giving the computer little eyes so it can understand the world.
+                <br><br>
+                So, Computer Vision is one way AI helps us every day. Great job learning with me today!"
+            </p>
+            
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2);">
+                <h4>🎯 الموضوع: Computer Vision</h4>
+                <ul style="text-align: right; margin-right: 20px;">
+                    <li>تعريف Computer Vision وكيف تعمل</li>
+                    <li>أمثلة عملية من الحياة اليومية</li>
+                    <li>شرح مبسط للأطفال عن الذكاء الاصطناعي</li>
+                    <li>استخدام أمثلة مألوفة (كاميرا الهاتف)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const video = document.querySelector('video');
+        
+        function playVideo() {
+            video.play();
+        }
+        
+        function pauseVideo() {
+            video.pause();
+        }
+        
+        // Add some interaction feedback
+        video.addEventListener('loadstart', () => {
+            console.log('🎬 بدء تحميل الفيديو...');
+        });
+        
+        video.addEventListener('canplay', () => {
+            console.log('✅ الفيديو جاهز للتشغيل!');
+        });
+        
+        video.addEventListener('ended', () => {
+            console.log('🎉 انتهى الفيديو! رائع!');
+        });
+        
+        // Auto-play when loaded (if allowed by browser)
+        video.addEventListener('loadeddata', () => {
+            // Optional: auto-play
+            video.play().catch(e => {
+                console.log('التشغيل التلقائي غير متاح - اضغط زر التشغيل');
+            });
+        });
+    </script>
+</body>
+</html>

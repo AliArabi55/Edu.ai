@@ -2,6 +2,7 @@
 """
 Edu.ai Avatar Web Server
 Provides a web interface to launch and control the Avatar assistant automatically
+Now includes TTS Avatar video generation functionality
 """
 
 import os
@@ -11,9 +12,15 @@ import signal
 import threading
 import time
 import json
+import uuid
+import requests
 from pathlib import Path
-from flask import Flask, request, jsonify, render_template_string
+from flask import Flask, request, jsonify, render_template_string, send_file
+from dotenv import load_dotenv
 import logging
+
+# Load environment variables
+load_dotenv()
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -325,6 +332,7 @@ def index():
         <div style="text-align: center;">
             <button class="btn" id="startBtn" onclick="startAvatar()">🎤 Start Sam</button>
             <button class="btn" id="stopBtn" onclick="stopAvatar()" disabled style="background: #f44336;">⏹️ Stop Sam</button>
+            <a href="/tts-avatar" class="btn" style="background: linear-gradient(45deg, #9C27B0, #E91E63); text-decoration: none; display: inline-block;">🎬 Create Avatar Video</a>
         </div>
         
         <div style="margin-top: 30px; text-align: center;">
@@ -595,6 +603,143 @@ def cleanup():
     global avatar_process
     if avatar_process and avatar_process.poll() is None:
         avatar_process.terminate()
+
+# TTS Avatar Integration
+# Store job status globally for tracking
+tts_jobs = {}
+
+def _get_tts_headers():
+    """Get headers for TTS Avatar API calls"""
+    return {
+        'Ocp-Apim-Subscription-Key': os.getenv('AZURE_TTS_KEY') or os.getenv('AZURE_SPEECH_KEY'),
+        'Content-Type': 'application/json'
+    }
+
+@app.route('/tts-avatar')
+def tts_avatar_page():
+    """Serve TTS Avatar creation page"""
+    try:
+        with open('tts-avatar.html', 'r', encoding='utf-8') as f:
+            return f.read()
+    except FileNotFoundError:
+        return jsonify({'error': 'TTS Avatar page not found'}), 404
+
+@app.route('/create-tts-avatar', methods=['POST'])
+def create_tts_avatar():
+    """Create TTS Avatar video"""
+    try:
+        data = request.get_json()
+        text = data.get('text', 'مرحباً من Edu.ai!')
+        character = data.get('character', 'lisa-casual-sitting')
+        
+        # Get TTS endpoint and key
+        endpoint = os.getenv('AZURE_TTS_ENDPOINT') or os.getenv('AZURE_SPEECH_ENDPOINT')
+        if not endpoint:
+            return jsonify({'success': False, 'error': 'TTS endpoint not configured'})
+        
+        if not endpoint.endswith('/'):
+            endpoint += '/'
+        
+        # Create unique job ID
+        job_id = str(uuid.uuid4())
+        
+        # Prepare payload
+        payload = {
+            "synthesisConfig": {
+                "voice": "en-US-JennyMultilingualV2Neural",
+            },
+            "inputKind": "plainText",
+            "inputs": [{"content": text}],
+            "avatarConfig": {
+                "customized": False,
+                "talkingAvatarCharacter": character,
+                "videoFormat": "mp4",
+                "videoCodec": "h264",
+                "subtitleType": "soft_embedded",
+                "backgroundColor": "#FFFFFFFF",
+            }
+        }
+        
+        url = f'{endpoint}avatar/batchsyntheses/{job_id}?api-version=2024-04-15-preview'
+        headers = _get_tts_headers()
+        
+        logger.info(f"Creating TTS Avatar with job ID: {job_id}")
+        
+        response = requests.put(url, json=payload, headers=headers)
+        
+        if response.status_code == 201:
+            # Store job info
+            tts_jobs[job_id] = {
+                'status': 'NotStarted',
+                'text': text,
+                'character': character,
+                'created_at': time.time()
+            }
+            
+            logger.info(f"TTS Avatar job created successfully: {job_id}")
+            return jsonify({
+                'success': True,
+                'job_id': job_id,
+                'message': 'TTS Avatar job submitted successfully'
+            })
+        else:
+            logger.error(f"Failed to create TTS Avatar: {response.text}")
+            return jsonify({
+                'success': False,
+                'error': f'Failed to submit job: {response.text}'
+            })
+            
+    except Exception as e:
+        logger.error(f"Error creating TTS Avatar: {str(e)}")
+        return jsonify({'success': False, 'error': str(e)})
+
+@app.route('/check-tts-status/<job_id>')
+def check_tts_status(job_id):
+    """Check TTS Avatar job status"""
+    try:
+        endpoint = os.getenv('AZURE_TTS_ENDPOINT') or os.getenv('AZURE_SPEECH_ENDPOINT')
+        if not endpoint.endswith('/'):
+            endpoint += '/'
+            
+        url = f'{endpoint}avatar/batchsyntheses/{job_id}?api-version=2024-04-15-preview'
+        headers = _get_tts_headers()
+        
+        response = requests.get(url, headers=headers)
+        
+        if response.status_code == 200:
+            result = response.json()
+            status = result.get('status', 'Unknown')
+            
+            # Update stored job info
+            if job_id in tts_jobs:
+                tts_jobs[job_id]['status'] = status
+            
+            response_data = {'status': status}
+            
+            if status == 'Succeeded' and 'outputs' in result:
+                download_url = result.get('outputs', {}).get('result')
+                if download_url:
+                    response_data['download_url'] = download_url
+                    logger.info(f"TTS Avatar job completed: {job_id}")
+            elif status == 'Failed':
+                error_info = result.get('properties', {}).get('error', {})
+                error_msg = error_info.get('message', 'Unknown error')
+                response_data['error'] = error_msg
+                logger.error(f"TTS Avatar job failed: {job_id} - {error_msg}")
+            
+            return jsonify(response_data)
+        else:
+            return jsonify({
+                'status': 'Error',
+                'error': f'Failed to check status: {response.text}'
+            })
+            
+    except Exception as e:
+        logger.error(f"Error checking TTS status: {str(e)}")
+        return jsonify({
+            'status': 'Error',
+            'error': str(e)
+        })
 
 def main():
     """Main function"""
