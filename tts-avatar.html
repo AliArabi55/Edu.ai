@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 TTS Avatar Creator - Edu.ai</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        .btn:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .status {
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.2);
+            font-size: 16px;
+        }
+        
+        .success {
+            background: rgba(76, 175, 80, 0.8);
+        }
+        
+        .error {
+            background: rgba(244, 67, 54, 0.8);
+        }
+        
+        .loading {
+            background: rgba(255, 193, 7, 0.8);
+            color: #333;
+        }
+        
+        .video-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .video-container video {
+            max-width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .character-preview {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        
+        .character-option {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .character-option:hover,
+        .character-option.selected {
+            background: rgba(255,255,255,0.3);
+            border-color: #4ecdc4;
+        }
+        
+        .back-link {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+        
+        .back-link:hover {
+            background: rgba(255,255,255,0.3);
+        }
+    </style>
+</head>
+<body>
+    <a href="http://localhost:8000" class="back-link">← العودة للرئيسية</a>
+    
+    <div class="container">
+        <h1>🎬 إنشاء فيديو TTS Avatar</h1>
+        
+        <form id="avatarForm">
+            <div class="form-group">
+                <label for="text">النص المراد نطقه:</label>
+                <textarea id="text" placeholder="اكتب النص الذي تريد من Avatar أن ينطقه...">مرحباً! أنا سام، مدرس اللغة الإنجليزية الذكي. مرحباً بك في Edu.ai! دعنا نتعلم الذكاء الاصطناعي معاً بطريقة ممتعة!</textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="character">اختر شخصية Avatar:</label>
+                <select id="character">
+                    <option value="lisa-casual-sitting">Lisa - جلسة عادية</option>
+                    <option value="lisa-technical-sitting">Lisa - جلسة تقنية</option>
+                    <option value="lisa-business-sitting">Lisa - جلسة عمل</option>
+                    <option value="sara-casual-sitting">Sara - جلسة عادية</option>
+                    <option value="sara-business-sitting">Sara - جلسة عمل</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="btn" id="createBtn">🎬 إنشاء الفيديو</button>
+        </form>
+        
+        <div id="status" class="status" style="display: none;"></div>
+        
+        <div id="videoContainer" class="video-container" style="display: none;">
+            <h3>🎉 تم إنشاء الفيديو بنجاح!</h3>
+            <p>يمكنك مشاهدة الفيديو أو تحميله:</p>
+            <div id="videoPlayer"></div>
+            <a id="downloadLink" class="btn" target="_blank" style="display: inline-block; margin-top: 15px;">📥 تحميل الفيديو</a>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('avatarForm');
+        const status = document.getElementById('status');
+        const createBtn = document.getElementById('createBtn');
+        const videoContainer = document.getElementById('videoContainer');
+        const videoPlayer = document.getElementById('videoPlayer');
+        const downloadLink = document.getElementById('downloadLink');
+
+        function showStatus(message, type = 'loading') {
+            status.textContent = message;
+            status.className = `status ${type}`;
+            status.style.display = 'block';
+        }
+
+        function hideStatus() {
+            status.style.display = 'none';
+        }
+
+        async function createTTSAvatar(text, character) {
+            try {
+                showStatus('🚀 جاري إرسال الطلب...', 'loading');
+                createBtn.disabled = true;
+
+                const response = await fetch('/create-tts-avatar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        text: text,
+                        character: character
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`خطأ في الخادم: ${response.status}`);
+                }
+
+                const result = await response.json();
+                
+                if (result.success) {
+                    showStatus(`✅ تم إرسال المهمة بنجاح! رقم المهمة: ${result.job_id}`, 'success');
+                    
+                    // Start polling for job status
+                    pollJobStatus(result.job_id);
+                } else {
+                    showStatus(`❌ خطأ: ${result.error}`, 'error');
+                    createBtn.disabled = false;
+                }
+
+            } catch (error) {
+                showStatus(`❌ خطأ في الاتصال: ${error.message}`, 'error');
+                createBtn.disabled = false;
+            }
+        }
+
+        async function pollJobStatus(jobId) {
+            const maxAttempts = 30; // 5 minutes max
+            let attempts = 0;
+
+            const checkStatus = async () => {
+                try {
+                    const response = await fetch(`/check-tts-status/${jobId}`);
+                    const result = await response.json();
+
+                    if (result.status === 'Succeeded') {
+                        showStatus('🎉 تم إنشاء الفيديو بنجاح!', 'success');
+                        
+                        // Show video
+                        if (result.download_url) {
+                            videoPlayer.innerHTML = `<video controls width="100%" style="max-width: 600px;">
+                                <source src="${result.download_url}" type="video/mp4">
+                                متصفحك لا يدعم تشغيل الفيديو.
+                            </video>`;
+                            downloadLink.href = result.download_url;
+                            videoContainer.style.display = 'block';
+                        }
+                        
+                        createBtn.disabled = false;
+                        return;
+                        
+                    } else if (result.status === 'Failed') {
+                        showStatus(`❌ فشل في إنشاء الفيديو: ${result.error || 'سبب غير معروف'}`, 'error');
+                        createBtn.disabled = false;
+                        return;
+                        
+                    } else if (result.status === 'Running' || result.status === 'NotStarted') {
+                        attempts++;
+                        showStatus(`⏳ جاري المعالجة... (${attempts}/${maxAttempts})`, 'loading');
+                        
+                        if (attempts < maxAttempts) {
+                            setTimeout(checkStatus, 10000); // Check again in 10 seconds
+                        } else {
+                            showStatus('⏰ انتهت المهلة الزمنية. حاول مرة أخرى.', 'error');
+                            createBtn.disabled = false;
+                        }
+                    }
+
+                } catch (error) {
+                    showStatus(`❌ خطأ في التحقق من الحالة: ${error.message}`, 'error');
+                    createBtn.disabled = false;
+                }
+            };
+
+            checkStatus();
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const text = document.getElementById('text').value.trim();
+            const character = document.getElementById('character').value;
+            
+            if (!text) {
+                showStatus('❌ يرجى إدخال النص المراد نطقه', 'error');
+                return;
+            }
+            
+            videoContainer.style.display = 'none';
+            createTTSAvatar(text, character);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحليل أوقات إنشاء الفيديوهات - TTS Avatar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+        
+        .timing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .timing-card {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .timing-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .timing-card.success {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.3);
+        }
+        
+        .timing-card.processing {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            box-shadow: 0 8px 20px rgba(243, 156, 18, 0.3);
+        }
+        
+        .timing-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .timing-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .video-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .video-card h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        .video-card video {
+            width: 100%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        
+        .video-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            overflow-x: auto;
+        }
+        
+        .comparison-table h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            text-align: center;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ecf0f1;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: center;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        tr:hover {
+            background: #e3f2fd;
+        }
+        
+        .download-btn {
+            background: linear-gradient(135deg, #27ae60, #2ecc71);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 10px 5px;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.4);
+        }
+        
+        .play-btn {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+        
+        .play-btn:hover {
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            color: #7f8c8d;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .timing-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎬 تحليل أوقات إنشاء الفيديوهات</h1>
+            <p class="subtitle">قياس دقيق لأداء نظام TTS Avatar</p>
+        </div>
+
+        <div class="timing-grid">
+            <div class="timing-card success">
+                <div class="timing-value">67.3</div>
+                <div class="timing-label">ثانية - الوقت الإجمالي</div>
+            </div>
+            
+            <div class="timing-card processing">
+                <div class="timing-value">65.7</div>
+                <div class="timing-label">ثانية - وقت المعالجة</div>
+            </div>
+            
+            <div class="timing-card">
+                <div class="timing-value">1.6</div>
+                <div class="timing-label">ثانية - وقت الإرسال</div>
+            </div>
+            
+            <div class="timing-card success">
+                <div class="timing-value">1.92</div>
+                <div class="timing-label">كلمة/ثانية - الكفاءة</div>
+            </div>
+        </div>
+
+        <div class="video-section">
+            <div class="video-card">
+                <h3>🧠 فيديو Machine Learning</h3>
+                <video controls>
+                    <source src="machine_learning_avatar.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو
+                </video>
+                
+                <div class="video-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">129</div>
+                        <div class="stat-label">كلمة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">812</div>
+                        <div class="stat-label">حرف</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">~55</div>
+                        <div class="stat-label">ثانية مدة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">محاولات فحص</div>
+                    </div>
+                </div>
+                
+                <a href="machine_learning_avatar.mp4" download class="download-btn">
+                    📥 تحميل الفيديو
+                </a>
+                <button onclick="playInPlayer()" class="download-btn play-btn">
+                    ▶️ فتح في المشغل
+                </button>
+            </div>
+            
+            <div class="video-card">
+                <h3>👁️ فيديو Computer Vision السابق</h3>
+                <video controls>
+                    <source src="computer_vision_avatar.mp4" type="video/mp4">
+                    متصفحك لا يدعم تشغيل الفيديو
+                </video>
+                
+                <div class="video-stats">
+                    <div class="stat-item">
+                        <div class="stat-value">123</div>
+                        <div class="stat-label">كلمة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">775</div>
+                        <div class="stat-label">حرف</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">~49</div>
+                        <div class="stat-label">ثانية مدة</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value">58.5</div>
+                        <div class="stat-label">ثانية معالجة</div>
+                    </div>
+                </div>
+                
+                <a href="computer_vision_avatar.mp4" download class="download-btn">
+                    📥 تحميل الفيديو
+                </a>
+            </div>
+        </div>
+
+        <div class="comparison-table">
+            <h3>📊 مقارنة الأداء</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>الفيديو</th>
+                        <th>عدد الكلمات</th>
+                        <th>الوقت الإجمالي</th>
+                        <th>وقت المعالجة</th>
+                        <th>الكفاءة (كلمة/ثانية)</th>
+                        <th>محاولات الفحص</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>🧠 Machine Learning</td>
+                        <td>129 كلمة</td>
+                        <td>67.3 ثانية</td>
+                        <td>65.7 ثانية</td>
+                        <td>1.92 كلمة/ثانية</td>
+                        <td>7 محاولات</td>
+                    </tr>
+                    <tr>
+                        <td>👁️ Computer Vision</td>
+                        <td>123 كلمة</td>
+                        <td>58.5 ثانية</td>
+                        <td>56.9 ثانية</td>
+                        <td>2.10 كلمة/ثانية</td>
+                        <td>6 محاولات</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <p>⚡ تم إنشاء هذا التحليل بواسطة نظام TTS Avatar المطور</p>
+            <p>🕒 آخر تحديث: سبتمبر 2025</p>
+        </div>
+    </div>
+
+    <script>
+        function playInPlayer() {
+            // فتح الفيديو في المشغل الافتراضي
+            const link = document.createElement('a');
+            link.href = 'machine_learning_avatar.mp4';
+            link.target = '_blank';
+            link.click();
+        }
+
+        // إضافة تأثيرات تفاعلية للكروت
+        document.querySelectorAll('.timing-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) rotateY(5deg)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) rotateY(0)';
+            });
+        });
+
+        // تحديث معلومات الفيديو عند تحميلها
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('loadedmetadata', function() {
+                console.log(`مدة الفيديو: ${this.duration.toFixed(1)} ثانية`);
+            });
+        });
+    </script>
+</body>
+</html>

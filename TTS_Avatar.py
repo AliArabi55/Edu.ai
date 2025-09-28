@@ -2,8 +2,8 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Copyright (c) Microsoft. All rights reserved.
-# Licensed under the MIT license. See LICENSE.md file in the project root for full license information.
+# Edu.ai TTS Avatar Integration
+# Uses secure environment variables for Azure credentials
 
 import json
 import logging
@@ -11,21 +11,36 @@ import os
 import sys
 import time
 import uuid
+from dotenv import load_dotenv
 
 from azure.identity import DefaultAzureCredential
 import requests
+
+# Load environment variables from .env file
+load_dotenv()
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO,  # set to logging.DEBUG for verbose output
         format="[%(asctime)s] %(message)s", datefmt="%m/%d/%Y %I:%M:%S %p %Z")
 logger = logging.getLogger(__name__)
 
-# Load environment variables
-from dotenv import load_dotenv
-load_dotenv()
+# Get credentials from environment variables (SECURE)
+SPEECH_ENDPOINT = os.getenv('AZURE_TTS_ENDPOINT') or os.getenv('AZURE_SPEECH_ENDPOINT')
+SUBSCRIPTION_KEY = os.getenv('AZURE_TTS_KEY') or os.getenv('AZURE_SPEECH_KEY')
+SPEECH_REGION = os.getenv('AZURE_TTS_REGION') or os.getenv('AZURE_SPEECH_REGION')
 
-# The endpoint (and key) could be gotten from the Keys and Endpoint page in the Speech service resource.
-SPEECH_ENDPOINT = os.getenv('AZURE_OPENAI_ENDPOINT', "https://gpt4oali-8-june-gradutu-resource.cognitiveservices.azure.com/")
-# We recommend to use passwordless authentication with Azure Identity here; meanwhile, you can also use a subscription key instead
+# Validate required environment variables
+if not SPEECH_ENDPOINT:
+    logger.error("❌ AZURE_TTS_ENDPOINT or AZURE_SPEECH_ENDPOINT not found in .env file!")
+    sys.exit(1)
+    
+if not SUBSCRIPTION_KEY:
+    logger.error("❌ AZURE_TTS_KEY or AZURE_SPEECH_KEY not found in .env file!")
+    sys.exit(1)
+
+logger.info(f"✅ Using endpoint: {SPEECH_ENDPOINT}")
+logger.info(f"✅ Using region: {SPEECH_REGION}")
+
+# Use key-based authentication for simplicity
 PASSWORDLESS_AUTHENTICATION = False
 API_VERSION = "2024-04-15-preview"
 
@@ -36,18 +51,12 @@ def _create_job_id():
 
 def _authenticate():
     if PASSWORDLESS_AUTHENTICATION:
-        # Refer to https://learn.microsoft.com/python/api/overview/azure/identity-readme?view=azure-python#defaultazurecredential
-        # for more information about Azure Identity
-        # For example, your app can authenticate using your Azure CLI sign-in credentials with when developing locally.
-        # Your app can then use a managed identity once it has been deployed to Azure. No code changes are required for this transition.
-
-        # When developing locally, make sure that the user account that is accessing batch avatar synthesis has the right permission.
-        # You'll need Cognitive Services User or Cognitive Services Speech User role to submit batch avatar synthesis jobs.
+        # Use Azure Identity for passwordless authentication
         credential = DefaultAzureCredential()
         token = credential.get_token('https://cognitiveservices.azure.com/.default')
         return {'Authorization': f'Bearer {token.token}'}
     else:
-        SUBSCRIPTION_KEY = os.getenv("AZURE_OPENAI_KEY", "72joJ5pMIU3JnkBCmRobZDKlikTZEXqUmPrpt3IaKQVRjqo5XrzUJQQJ99BIACfhMk5XJ3w3AAAYACOGPpfl")
+        # Use subscription key from environment variables (SECURE)
         return {'Ocp-Apim-Subscription-Key': SUBSCRIPTION_KEY}
 
 def submit_synthesis(job_id: str):
@@ -60,7 +69,8 @@ def submit_synthesis(job_id: str):
 
     payload = {
         'synthesisConfig': {
-            "voice": 'en-US-JennyMultilingualNeural'
+            # "voice": 'en-US-JennyMultilingualNeural'
+            "voice": '{VOICE_NAME}', 
         },
         # Replace with your custom voice name and deployment ID if you want to use custom voice.
         # Multiple voices are supported, the mixture of custom voices and platform voices is allowed.
@@ -71,13 +81,28 @@ def submit_synthesis(job_id: str):
         "inputKind": "plainText",
         "inputs": [
             {
-                "content": "Hi, I'm Sam, your friendly AI teacher! Ready to learn about artificial intelligence together?",
+                "content": "Hi, I'm a virtual assistant created by Microsoft.",
             },
         ],
-        "avatarConfig": {
+        "avatarConfig":
+        {
             "customized": isCustomized, # set to True if you want to use customized avatar
-            "talkingAvatarCharacter": 'Lisa',  # talking avatar character
-            "talkingAvatarStyle": 'casual-sitting',  # talking avatar style, required for prebuilt avatar
+            # "talkingAvatarCharacter": 'Lisa-casual-sitting'
+            "talkingAvatarCharacter": '{TALKING_AVATAR_CHARACTER_NAME}',  # talking avatar character
+            "videoFormat": "mp4",  # mp4 or webm, webm is required for transparent background
+            "videoCodec": "h264",  # hevc, h264 or vp9, vp9 is required for transparent background; default is hevc
+            "subtitleType": "soft_embedded",
+            "backgroundColor": "#FFFFFFFF", # background color in RGBA format, default is white; can be set to 'transparent' for transparent background
+            # "backgroundImage": "https://samples-files.com/samples/Images/jpg/1920-1080-sample.jpg", # background image URL, only support https, either backgroundImage or backgroundColor can be set
+        }
+        if isCustomized
+        else
+        {
+            "customized": isCustomized, # set to True if you want to use customized avatar
+            # "talkingAvatarCharacter": 'Lisa'
+            "talkingAvatarCharacter": '{TALKING_AVATAR_CHARACTER}',  # talking avatar character
+            # "talkingAvatarStyle": 'casual-sitting'
+            "talkingAvatarStyle": '{TALKING_AVATAR_STYLE}',  # talking avatar style, required for prebuilt avatar, optional for custom avatar
             "videoFormat": "mp4",  # mp4 or webm, webm is required for transparent background
             "videoCodec": "h264",  # hevc, h264 or vp9, vp9 is required for transparent background; default is hevc
             "subtitleType": "soft_embedded",
@@ -120,18 +145,50 @@ def list_synthesis_jobs(skip: int = 0, max_page_size: int = 100):
     else:
         logger.error(f'Failed to list batch synthesis jobs: {response.text}')
 
-if __name__ == '__main__':
+def create_tts_avatar(text=None, character="lisa-casual-sitting"):
+    """Main function to create TTS Avatar with enhanced error handling"""
+    if not text:
+        text = "مرحباً! أنا سام، مدرس اللغة الإنجليزية الذكي. مرحباً بك في Edu.ai!"
+    
     job_id = _create_job_id()
-    if submit_synthesis(job_id):
-        while True:
+    
+    logger.info("🎬 Starting TTS Avatar creation process...")
+    
+    if submit_synthesis(job_id, text, character):
+        logger.info("⏳ Waiting for synthesis to complete...")
+        
+        max_attempts = 20  # Maximum attempts
+        attempt = 0
+        
+        while attempt < max_attempts:
             status = get_synthesis(job_id)
+            
             if status == 'Succeeded':
-                logger.info('batch avatar synthesis job succeeded')
-                break
+                logger.info('🎉 Batch avatar synthesis job succeeded!')
+                return True
             elif status == 'Failed':
-                logger.error('batch avatar synthesis job failed')
-                break
+                logger.error('❌ Batch avatar synthesis job failed!')
+                return False
+            elif status in ['NotStarted', 'Running']:
+                logger.info(f'⏳ Job processing... (attempt {attempt + 1}/{max_attempts})')
+                time.sleep(10)
             else:
-                logger.info(f'batch avatar synthesis job is still running, status [{status}]')
-                time.sleep(5)
+                logger.warning(f'⚠️ Unknown status: {status}')
+                time.sleep(10)
+            
+            attempt += 1
+        
+        logger.error("⏰ Timeout: Job took too long")
+        return False
+    else:
+        logger.error("❌ Failed to submit job")
+        return False
+
+if __name__ == '__main__':
+    # Test the TTS Avatar
+    success = create_tts_avatar()
+    if success:
+        logger.info("✅ TTS Avatar created successfully!")
+    else:
+        logger.error("❌ TTS Avatar creation failed!")
             
