@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+}
+
+/* Header Styles */
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo h2 {
+    color: #667eea;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links span {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links span:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.video-wrapper {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.course-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.course-info h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-info p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.course-details {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
+}
+
+.course-details span {
+    background: #f8f9fa;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #495057;
+}
+
+/* Video Container */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#courseVideo {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: #000;
+}
+
+/* Start Overlay */
+.start-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9), rgba(118, 75, 162, 0.9));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.start-content {
+    text-align: center;
+    color: white;
+}
+
+.play-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    color: white;
+    animation: pulse 2s infinite;
+}
+
+.play-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.start-button {
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.start-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(39, 174, 96, 0.4);
+}
+
+.start-description {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-top: 1rem;
+}
+
+/* Video Controls */
+.video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 1rem;
+}
+
+.progress-container {
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(135deg, #27ae60, #2ecc71);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.controls-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.control-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.time-display {
+    color: white;
+    font-weight: 500;
+    margin-left: auto;
+    margin-right: 1rem;
+}
+
+.speed-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+}
+
+.speed-control label {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.speed-select {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.speed-select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.speed-select option {
+    background: #333;
+    color: white;
+}
+
+/* End Screen */
+.end-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.95), rgba(41, 128, 185, 0.95));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.end-content {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    padding: 2rem;
+}
+
+.completion-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    color: #27ae60;
+    animation: bounce 1s ease infinite;
+}
+
+.completion-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+.end-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.end-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.end-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.action-btn {
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.action-btn.primary {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+    box-shadow: 0 6px 20px rgba(231, 76, 60, 0.3);
+}
+
+.action-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(231, 76, 60, 0.4);
+}
+
+.action-btn.secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.action-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-bar {
+        padding: 1rem;
+    }
+    
+    .nav-links {
+        gap: 1rem;
+    }
+    
+    .main-content {
+        padding: 0 1rem;
+    }
+    
+    .video-wrapper {
+        padding: 1.5rem;
+    }
+    
+    .course-info h1 {
+        font-size: 2rem;
+    }
+    
+    .course-details {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .end-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .action-btn {
+        min-width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .course-info h1 {
+        font-size: 1.8rem;
+    }
+    
+    .start-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .play-icon {
+        width: 60px;
+        height: 60px;
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Course Video - Edu.ai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video-player-container">
+        <!-- Header -->
+        <div class="header">
+            <div class="nav-bar">
+                <div class="logo" onclick="window.location.href='../1.Land page/index.html'">
+                    <h2>Edu.ai</h2>
+                </div>
+                <div class="nav-links">
+                    <span onclick="window.location.href='../1.Land page/index.html'">Home</span>
+                    <span onclick="window.location.href='../5.courses/index.html'">Courses</span>
+                    <span onclick="window.location.href='../1.Land page/index.html'">About</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Video Section -->
+        <div class="main-content">
+            <div class="video-wrapper">
+                <div class="course-info">
+                    <h1>🧠 Introduction to Machine Learning</h1>
+                    <p>Learn the fundamentals of Machine Learning with our AI-powered teacher Lisa!</p>
+                </div>
+
+                <!-- Video Player -->
+                <div class="video-container" id="videoContainer">
+                    <video id="courseVideo">
+                        <source src="../shared/0001.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    
+                    <!-- Start Button Overlay -->
+                    <div class="start-overlay" id="startOverlay">
+                        <div class="start-content">
+                            <div class="play-icon">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </div>
+                            <button class="start-button" id="startButton">
+                                <span>🎬 Start Learning</span>
+                            </button>
+                            <p class="start-description">
+                                Ready to learn about Machine Learning? Click to begin your journey!
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Video Controls -->
+                    <div class="video-controls" id="videoControls" style="display: none;">
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress" id="progress"></div>
+                            </div>
+                        </div>
+                        <div class="controls-buttons">
+                            <button class="control-btn" id="playPauseBtn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                            </button>
+                            <div class="time-display">
+                                <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+                            </div>
+                            <button class="control-btn" id="volumeBtn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                                </svg>
+                            </button>
+                            <div class="speed-control">
+                                <label for="speedSelect">Speed:</label>
+                                <select id="speedSelect" class="speed-select">
+                                    <option value="0.5">0.5x</option>
+                                    <option value="0.75">0.75x</option>
+                                    <option value="1">1x</option>
+                                    <option value="1.25">1.25x</option>
+                                    <option value="1.5" selected>1.5x</option>
+                                    <option value="2">2x</option>
+                                </select>
+                            </div>
+                            <button class="control-btn" id="fullscreenBtn">
+                                <svg viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video End Screen -->
+                <div class="end-screen" id="endScreen" style="display: none;">
+                    <div class="end-content">
+                        <div class="completion-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                        <h2>🎉 Congratulations!</h2>
+                        <p>You've completed the Machine Learning introduction!</p>
+                        <div class="end-actions">
+                            <button class="action-btn primary" onclick="goToNextLesson()">
+                                📝 Take Quiz
+                            </button>
+                            <button class="action-btn secondary" onclick="replayVideo()">
+                                🔄 Watch Again
+                            </button>
+                            <button class="action-btn secondary" onclick="backToCourses()">
+                                📚 Back to Courses
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2025 Edu.ai - Empowering the next generation with AI education</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
